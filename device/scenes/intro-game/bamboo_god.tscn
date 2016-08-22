@@ -2,17 +2,17 @@
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
 
-[node name="bambu_god" type="Node2D"]
+[node name="bamboo_god" type="Node2D"]
 
 script/script = ExtResource( 1 )
 animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
-tooltip = "Banbu God"
+tooltip = "The almighty Panda God"
 action = ""
-events_path = "res://scenes/intro-game/bambu_god.esc"
-global_id = "bambu_god"
+events_path = "res://scenes/intro-game/bamboo_god.esc"
+global_id = "bamboo_god"
 use_combine = false
 inventory = false
 use_action_menu = true
@@ -42,7 +42,7 @@ margin/left = 8.0
 margin/top = 8.0
 margin/right = 92.0
 margin/bottom = 22.0
-text = "BAMBU GOD"
+text = "BAMBOO GOD"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
