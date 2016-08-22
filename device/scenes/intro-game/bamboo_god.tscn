@@ -91,7 +91,6 @@ autoplay = "neutral"
 [node name="Sprite" type="AnimatedSprite" parent="."]
 
 transform/pos = Vector2( -10.9368, -133.184 )
-transform/scale = Vector2( 1, 1 )
 frames = SubResource( 4 )
 animation = "default"
 frame = 2

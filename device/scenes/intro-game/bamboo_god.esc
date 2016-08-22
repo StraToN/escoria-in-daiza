@@ -1,0 +1,4 @@
+:talk
+
+set_state bamboo_god happy [i/inv_good_bamboo]
+set_state bamboo_god angry [i/inv_bad_bamboo]

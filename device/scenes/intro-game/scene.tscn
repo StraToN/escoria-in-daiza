@@ -14,6 +14,7 @@ script/script = ExtResource( 1 )
 
 [node name="bamboo_god" parent="." instance=ExtResource( 2 )]
 
+visibility/visible = false
 transform/pos = Vector2( 989.875, 614.859 )
 transform/scale = Vector2( 1.1039, 1.05529 )
 active = false

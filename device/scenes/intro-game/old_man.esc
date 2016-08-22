@@ -7,7 +7,10 @@
 
 say old_man "Please go get the bamboo stick and come back to me." [introduced, !picked_item]
 
-> [introduced, picked_item]
+> [introduced, picked_item, !god_appeared]
 	say old_man "Good! Now offer it to our almighty panda god, I’ll summon them for you."
-        set_global god_appeared true
-        set_active bamboo_god
+	set_global god_appeared true
+	set_active bamboo_god true
+	stop
+
+say old_man "Go give the bamboo stick to your god!" [god_appeared]
