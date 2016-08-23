@@ -32,7 +32,6 @@ action = "walk"
 
 [node name="bamboo_god" parent="." instance=ExtResource( 4 )]
 
-visibility/visible = false
 transform/pos = Vector2( 973.22, 581.548 )
 transform/scale = Vector2( 1.1039, 1.05529 )
 active = false
