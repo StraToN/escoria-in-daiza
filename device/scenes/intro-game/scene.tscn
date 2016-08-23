@@ -21,18 +21,18 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -7.0
-margin/top = -3.0
-margin/right = 1913.0
-margin/bottom = 1077.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1920.0
+margin/bottom = 1080.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 script/script = ExtResource( 3 )
+__meta__ = { "_edit_lock_":true }
 action = "walk"
 
 [node name="bamboo_god" parent="." instance=ExtResource( 4 )]
 
-visibility/visible = false
 transform/pos = Vector2( 973.22, 581.548 )
 transform/scale = Vector2( 1.1039, 1.05529 )
 active = false
@@ -54,12 +54,14 @@ transform/scale = Vector2( 0.7, 0.7 )
 
 [node name="foreground left" type="Sprite" parent="."]
 
-transform/pos = Vector2( 167.674, 537.576 )
+transform/pos = Vector2( 170, 540 )
 texture = ExtResource( 9 )
+__meta__ = { "_edit_lock_":true }
 
 [node name="foreground right" type="Sprite" parent="."]
 
-transform/pos = Vector2( 1638.45, 536.129 )
+transform/pos = Vector2( 1642, 540 )
 texture = ExtResource( 10 )
+__meta__ = { "_edit_lock_":true }
 
 
