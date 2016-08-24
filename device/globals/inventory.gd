@@ -65,7 +65,7 @@ func sort_items():
 			printt("showing item", c.global_id, slots.get_child(slot).get_global_pos())
 			#printt("no focus")
 			c.set_global_pos(slots.get_child(slot).get_global_pos())
-			c.set_focus_mode(Control.FOCUS_NONE)
+			#c.set_focus_mode(Control.FOCUS_NONE)
 			if !focus:
 				#c.grab_focus()
 				focus = true
