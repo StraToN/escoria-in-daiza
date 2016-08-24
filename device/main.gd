@@ -55,8 +55,15 @@ func menu_close(p_menu):
 		pass
 
 func load_menu(path):
-	var menu = load(path).instance()
+	if path == "":
+		printt("error: loading empty menu")
+		return
+	var menu = load(path)
+	if menu == null:
+		printt("error loading menu ", path)
+		return
 	printt("************* loding menu ", path, menu)
+	menu = menu.instance()
 	menu_layer.add_child(menu)
 	return menu
 
@@ -127,6 +134,7 @@ func load_telon():
 
 func _ready():
 
+	printt("main ready")
 	get_node("/root").set_render_target_clear_on_new_frame(true)
 
 	game_size = Vector2()

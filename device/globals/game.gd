@@ -239,11 +239,11 @@ func scene_input(event):
 
 	if event.is_action("menu_request") && event.is_pressed() && !event.is_echo():
 		if vm.can_save() && vm.can_interact() && vm.menu_enabled():
-			get_node("/root/main").load_menu("res://game/ui/main_menu.xml")
+			get_node("/root/main").load_menu(Globals.get("ui/main_menu"))
 		else:
 			#get_tree().call_group(0, "game", "ui_blocked")
 			if vm.menu_enabled():
-				get_node("/root/main").load_menu("res://game/ui/in_game_menu.scn")
+				get_node("/root/main").load_menu(Globals.get("ui/main_menu"))
 			else:
 				get_tree().call_group(0, "game", "ui_blocked")
 

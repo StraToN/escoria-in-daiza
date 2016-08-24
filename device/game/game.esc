@@ -1,0 +1,9 @@
+:load
+
+cut_scene telon fade_out
+
+change_scene res://scenes/intro-game/scene.tscn
+
+cut_scene telon fade_in
+
+say old_man "HELLO I'M THE OLD MAN, WELCOME TO THE GAME!!1!"
