@@ -193,7 +193,7 @@ func scene_input(event):
 		else:
 			#get_tree().call_group(0, "game", "ui_blocked")
 			if vm.menu_enabled():
-				get_node("/root/main").load_menu(Globals.get("ui/main_menu"))
+				get_node("/root/main").load_menu(Globals.get("ui/in_game_menu"))
 			else:
 				get_tree().call_group(0, "game", "ui_blocked")
 

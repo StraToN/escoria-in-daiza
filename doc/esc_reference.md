@@ -145,6 +145,11 @@ set_globals i/* false
 - queue_resource path front_of_queue
   Queues the load of a resource in a background thread. The path must be a full path inside your game, for example "res://scenes/next_scene.tscn". The "front_of_queue" parameter is optional (default value false), to put the resource in the front of the queue. Queued resources are cleared when a change scene happens (but after the scene is loaded, meaning you can queue resources that belong to the next scene).
 
+- queue_animation object animation
+  Similar to queue_resource, queues the resources necessary to have an animation loaded on an item. The resource paths are taken from the item placeholders.
+
+- game_over continue_enabled show_credits
+  Ends the game. Use the "continue_enabled" parameter to enable or disable the continue button in the main menu afterwards. The "show_credits" parameter loads the credits ui if true.
 
 Dialogs
 -------

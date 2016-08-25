@@ -31,7 +31,7 @@ func start_new_game(p_confirm):
 func continue_pressed():
 	button_clicked()
 	if root.get_current_scene() extends preload("res://globals/scene.gd"):
-		root.game_loaded() # should change to "collapse_menues" or something
+		root.menu_collapse()
 	else:
 		if vm.continue_enabled:
 			load_autosave()
@@ -57,7 +57,7 @@ func input(event):
 		if root.get_current_scene() extends preload("res://globals/scene.gd"):
 			close()
 
-func game_loaded():
+func menu_collapsed():
 	close()
 
 func _on_exit_pressed():
