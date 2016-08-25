@@ -7,9 +7,9 @@
 [ext_resource path="res://scenes/intro-game/bad_bamboo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/intro-game/good_bamboo.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/intro-game/old_man.tscn" type="PackedScene" id=7]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-left.png" type="Texture" id=9]
-[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-right.png" type="Texture" id=10]
+[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-left.png" type="Texture" id=8]
+[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-right.png" type="Texture" id=9]
+[ext_resource path="res://globals/game.scn" type="PackedScene" id=10]
 
 [node name="scene" type="Node2D"]
 
@@ -33,6 +33,7 @@ action = "walk"
 
 [node name="bamboo_god" parent="." instance=ExtResource( 4 )]
 
+visibility/visible = false
 transform/pos = Vector2( 973.22, 581.548 )
 transform/scale = Vector2( 1.1039, 1.05529 )
 active = false
@@ -50,18 +51,18 @@ transform/pos = Vector2( 1347.53, 897.092 )
 transform/pos = Vector2( 383.883, 617.274 )
 transform/scale = Vector2( 0.7, 0.7 )
 
-[node name="game" parent="." instance=ExtResource( 8 )]
-
 [node name="foreground left" type="Sprite" parent="."]
 
 transform/pos = Vector2( 170, 540 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="foreground right" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1642, 540 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 __meta__ = { "_edit_lock_":true }
+
+[node name="game" parent="." instance=ExtResource( 10 )]
 
 
