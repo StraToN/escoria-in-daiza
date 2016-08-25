@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://ui/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sprites/continue-button.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/start-button.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/quit-button.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/continue-push.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/start-button.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/start-push.png" type="Texture" id=5]
+[ext_resource path="res://scenes/intro-game/sprites/quit-button.png" type="Texture" id=6]
+[ext_resource path="res://scenes/intro-game/sprites/quit-push.png" type="Texture" id=7]
 
 [node name="main_menu" type="Control"]
 
@@ -26,11 +29,13 @@ size_flags/vertical = 2
 margin/left = 163.0
 margin/top = 140.0
 margin/right = 724.0
-margin/bottom = 234.2
+margin/bottom = 234.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 2 )
+textures/pressed = ExtResource( 3 )
+textures/hover = ExtResource( 3 )
 params/scale = Vector2( 0.3, 0.3 )
 
 [node name="new_game" type="TextureButton" parent="."]
@@ -46,7 +51,9 @@ margin/bottom = 379.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+textures/hover = ExtResource( 5 )
 params/scale = Vector2( 0.3, 0.3 )
 
 [node name="exit" type="TextureButton" parent="."]
@@ -62,7 +69,9 @@ margin/bottom = 934.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 4 )
+textures/normal = ExtResource( 6 )
+textures/pressed = ExtResource( 7 )
+textures/hover = ExtResource( 7 )
 params/scale = Vector2( 0.3, 0.3 )
 
 
