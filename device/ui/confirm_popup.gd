@@ -16,14 +16,27 @@ func button_pressed(p_confirm):
 	if anim.is_playing():
 		return
 	if target != null:
-		target.call(slot, p_confirm)
+		target.call_deferred(slot, p_confirm)
+
+
+	close()
+
+func game_loaded():
+	close()
+
+
+func close():
+	get_node("/root/main").menu_close(self)
+	if anim.is_playing():
+		var cur = anim.get_current_animation()
+		if cur == "close":
+			return
 
 	anim.play("close")
 
 func anim_finished():
 	var cur = anim.get_current_animation()
 	if cur == "close":
-		get_node("/root/main").menu_close(self)
 		queue_free()
 
 func input(event):
