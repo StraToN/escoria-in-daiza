@@ -186,6 +186,6 @@ repeat
 All parameters are options:
  - type: (default value "default") the type of dialog menu to use. All types are in the "dd_player" scene.
  - avatar: (default value "default") the avatar to use in the dialog ui.
- - timeout: (default value 0) timeout to select an option. After the time has passed, the "default_option" will be selected automatically. If the value is 0, there's no timeout.
+ - timeout: (default value 0) timeout to select an option. After the time has passed, the "timeout_option" will be selected automatically. If the value is 0, there's no timeout.
  - timeout_option: (default value 0) option selected when timeout is reached.
 
