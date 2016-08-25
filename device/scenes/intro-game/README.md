@@ -28,3 +28,4 @@ Except if stated otherwise, the whole game (code and assets) is released under M
 The typeface "Big Bottom Cartoon", created by [Karen B. Jones](http://karenbjones.com/) and modified by [Cedric Gémy](http://cgemy.com/) for the non-ASCII characters and the italic version of the font, is distributed under Creative Commons Attribution-ShareAlike 3.0.
 
 Sounds are by [Olivier Meunier](http://f-lat.org/) from the original Peril In Daa game, distributed under Creative Commons Attribution-ShareAlike 3.0.
+except asianorientals taken from http://opengameart.org/content/asianoriental2 which is CC0
