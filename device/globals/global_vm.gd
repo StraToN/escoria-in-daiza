@@ -59,10 +59,7 @@ var settings_default = {
 }
 
 
-var scenes_cache_list = [
-		"res://globals/game.scn",
-		#"res://game/player/player.xml",
-	]
+var scenes_cache_list = preload("res://game/scenes_cache.gd").scenes
 
 var scenes_cache = {} # this will eventually have everything in scenes_cache_list forever
 

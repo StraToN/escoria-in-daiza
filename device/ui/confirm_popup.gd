@@ -21,7 +21,7 @@ func button_pressed(p_confirm):
 
 	close()
 
-func game_loaded():
+func menu_collapsed():
 	close()
 
 

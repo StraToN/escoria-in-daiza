@@ -67,11 +67,11 @@ func load_menu(path):
 	menu_layer.add_child(menu)
 	return menu
 
-func game_loaded():
+func menu_collapse():
 	var i = menu_stack.size()
 	while i > 0:
 		i -= 1
-		menu_stack[i].game_loaded()
+		menu_stack[i].menu_collapsed()
 
 func set_current_scene(p_scene):
 	#print_stack()
