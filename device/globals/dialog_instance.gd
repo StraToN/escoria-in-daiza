@@ -121,7 +121,7 @@ func init(p_params, p_context, p_intro, p_outro):
 		var anim = get_node("animation")
 		if anim.has_animation("show"):
 			if self.is_type("Node2D"):
-				hide()
+				show()
 			anim.play("show")
 		else:
 			if self.is_type("Node2D"):
