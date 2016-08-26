@@ -1,46 +1,46 @@
 :look
 
-say player "Maybe he can help me..."
+say player "Maybe he can help me..." default avatar_panda
 
 
 :talk
 
-say player "What a strange critter…"
-say chameleon "You know I can hear you, right?"
+say player "What a strange critter…" default avatar_panda
+say chameleon "You know I can hear you, right?" default avatar_chameleon
 
-say player "What? You can talk!?"
-say chameleon "Sure, can't you?"
-say player "..."
-say player "Good point."
+say player "What? You can talk!?" default avatar_panda
+say chameleon "Sure, can't you?" default avatar_chameleon
+say player "..." default avatar_panda
+say player "Good point." default avatar_panda
 
 ? default avatar_panda
 	- "You're a chameleon right?"
 		say player "You're a chameleon right?" default avatar_panda
-		say chameleon "That's right!"
-		?
+		say chameleon "That's right!" default avatar_chameleon
+		? default avatar_panda
 			- "What's a chameleon doing here?"
-				say player "What's a chameleon doing in this part of the world?"
-				say chameleon "Oh you know, I just like traveling a lot."
+				say player "What's a chameleon doing in this part of the world?" default avatar_panda
+				say chameleon "Oh you know, I just like traveling a lot." default avatar_chameleon
 			- "I have never seen one before!"
-				say player "Whoooah! I've never seen one before!"
-				say chameleon "I guess not many of us are around this part of the globe."
+				say player "Whoooah! I've never seen one before!" default avatar_panda
+				say chameleon "I guess not many of us are around this part of the globe." default avatar_chameleon
 	- "Do you enjoy our babmoo forest?"
-		say player "Do you enjoy our bamboo forest? Are you comfortable?"
-		say chameleon "Sure, I like it. Where are all other pandas though?"
-		?
+		say player "Do you enjoy our bamboo forest? Are you comfortable?" default avatar_panda
+		say chameleon "Sure, I like it. Where are all other pandas though?" default avatar_chameleon
+		? default avatar_panda
 			- "Aliens"
-				say player "Aliens abducted them!"
-				say chameleon "Hahahaha! Nice one little panda!"
+				say player "Aliens abducted them!" default avatar_panda
+				say chameleon "Hahahaha! Nice one little panda!" default avatar_chameleon
 			- "Forest destruction"
-				say player "The humans are destroying our forest with their machines..."
-				say chameleon "Ow, that doesn't sound so nice, are you doing anything about it?"
-				?
+				say player "The humans are destroying our forest with their machines..." default avatar_panda
+				say chameleon "Ow, that doesn't sound so nice, are you doing anything about it?" default avatar_chameleon
+				? default avatar_panda
 					- "No"
-						say player "No... We can't do anything I guess."
-						say chameleon "Oh, I see..."
+						say player "No... We can't do anything I guess." default avatar_panda
+						say chameleon "Oh, I see..." default avatar_chameleon
 					- "Imploring the Pandas' god"
-						say player "We are making offerings for the Pandas' god so that we can ask him for help. I'm actually gathering some fine bamboos for him! It would be my very first offering to him."
-						say chameleon "Well! Today is your lucky day!
+						say player "We are making offerings for the Pandas' god so that we can ask him for help. I'm actually gathering some fine bamboos for him! It would be my very first offering to him." default avatar_panda
+						say chameleon "Well! Today is your lucky day! default avatar_chameleon
 
 :pick_up
 
