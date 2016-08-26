@@ -519,7 +519,7 @@ func load_file(p_game):
 	clear()
 	loading_game = true
 	run_event(game["load"])
-	root.game_loaded()
+	root.menu_collapse()
 
 func load_slot(p_game):
 	var cb = [self, "game_str_loaded"]
