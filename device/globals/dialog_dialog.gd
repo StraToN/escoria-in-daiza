@@ -108,6 +108,7 @@ func start(params, p_context):
 
 	ready = false
 	animation.play("show")
+	animation.seek(0, true)
 	
 func _on_mouse_enter(button):
 	button.get_node("label").add_color_override("font_color",COLOR_MOUSE_ENTER_FONT)

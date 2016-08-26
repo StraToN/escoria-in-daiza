@@ -164,3 +164,5 @@ func _ready():
 	#get_node("log_button").connect("pressed", self, "log_button_pressed")
 
 	add_to_group("game")
+
+	call_deferred("sort_items")
