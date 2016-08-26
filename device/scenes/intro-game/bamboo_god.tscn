@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/spirit-angry.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/spirit-happy.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/spirit-neutral.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/click_mask/spirit_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/spirit-angry.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/spirit-happy.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/spirit-neutral.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -53,7 +54,7 @@ tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "updat
 
 [sub_resource type="SpriteFrames" id=5]
 
-animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+animations = [ { "frames":[ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
 [node name="bamboo_god" type="Node2D"]
 
@@ -74,16 +75,20 @@ talk_animation = "talk"
 active = true
 placeholders = {  }
 
-[node name="area" type="Control" parent="."]
+[node name="area" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -338.0
-margin/top = -459.0
-margin/right = 292.0
-margin/bottom = 82.0
+margin/left = -512.0
+margin/top = -559.0
+margin/right = 490.0
+margin/bottom = 293.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/click_mask = ExtResource( 2 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 

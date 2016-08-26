@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="Sample" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/bad-bamboo.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/bad-bamboo-hover.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/click_mask/bad_bamboo_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="Sample" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/bad-bamboo.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/bad-bamboo-hover.png" type="Texture" id=5]
 
 [sub_resource type="SampleLibrary" id=1]
 
-samples/mini-bamboo01 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+samples/mini-bamboo01 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
 
 [sub_resource type="Animation" id=2]
 
@@ -40,16 +41,20 @@ talk_animation = "talk"
 active = true
 placeholders = {  }
 
-[node name="area" type="Control" parent="."]
+[node name="area" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -82.0
-margin/top = -502.0
-margin/right = 142.0
-margin/bottom = 29.0
+margin/left = -109.0
+margin/top = -524.0
+margin/right = 154.0
+margin/bottom = 30.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/click_mask = ExtResource( 2 )
 
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
@@ -82,12 +87,12 @@ autoplay = ""
 [node name="_focus_out" type="Sprite" parent="."]
 
 transform/pos = Vector2( 22.8846, -246.388 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="_focus_in" type="Sprite" parent="."]
 
 visibility/visible = false
 transform/pos = Vector2( 22.8846, -246.388 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 
