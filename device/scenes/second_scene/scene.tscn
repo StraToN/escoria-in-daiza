@@ -31,26 +31,30 @@ bitmaps_scale = Vector2( 1, 1 )
 
 [node name="middle_ground_1" type="Sprite" parent="."]
 
-transform/pos = Vector2( 1013.05, 693.371 )
+transform/pos = Vector2( 1011.95, 844.804 )
 texture = ExtResource( 4 )
+offset = Vector2( 0, -150 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="middle_ground_2" type="Sprite" parent="."]
 
-transform/pos = Vector2( 1234.49, 1034.21 )
+transform/pos = Vector2( 1234.96, 1059.6 )
 texture = ExtResource( 5 )
+offset = Vector2( 0, -25 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="middle_ground_3" type="Sprite" parent="."]
 
-transform/pos = Vector2( 873.55, 796.072 )
+transform/pos = Vector2( 873.55, 817.522 )
 texture = ExtResource( 6 )
+offset = Vector2( 0, -22 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="middle_ground_4" type="Sprite" parent="."]
 
-transform/pos = Vector2( 592.452, 653.236 )
+transform/pos = Vector2( 592.388, 772.749 )
 texture = ExtResource( 7 )
+offset = Vector2( 0, -120 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="bad_bamboo_2" parent="." instance=ExtResource( 8 )]
