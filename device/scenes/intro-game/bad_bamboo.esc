@@ -6,7 +6,7 @@ say bad_bamboo "Weird texture for a bamboo…"
 	set_global i/inv_bad_bamboo true
 	set_active bad_bamboo false
 :look
-say bad_bamboo "This bamboo look so shiny and so slick."
+say bad_bamboo "This bamboo look so shiny and slick."
 
 :talk
 say bad_bamboo "Hello bamboo, where do you come from?"
