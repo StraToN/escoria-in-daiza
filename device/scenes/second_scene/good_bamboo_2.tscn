@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="Sample" id=2]
 [ext_resource path="res://scenes/second_scene/sprites/good-bamboo-2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/good-bamboo-hover.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -88,6 +87,5 @@ texture = ExtResource( 3 )
 
 visibility/visible = false
 transform/pos = Vector2( 136.288, -222.715 )
-texture = ExtResource( 4 )
 
 
