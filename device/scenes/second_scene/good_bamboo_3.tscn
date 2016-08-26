@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="Sample" id=2]
-[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/second_scene/sprites/click_mask/good-bamboo-3_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="Sample" id=3]
+[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-3.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -18,7 +19,7 @@ tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "updat
 
 [sub_resource type="SampleLibrary" id=2]
 
-samples/mini-bamboo01 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+samples/mini-bamboo01 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
 
 [node name="good_bamboo_3" type="Node2D"]
 
@@ -30,7 +31,7 @@ light_on_map = false
 tooltip = "A bamboo stick"
 action = ""
 events_path = "res://scenes/intro-game/good_bamboo.esc"
-global_id = "good_bamboo"
+global_id = "good_bamboo_3"
 use_combine = false
 inventory = false
 use_action_menu = true
@@ -39,16 +40,20 @@ talk_animation = "talk"
 active = true
 placeholders = {  }
 
-[node name="area" type="Control" parent="."]
+[node name="area" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -43.0
-margin/top = -137.0
-margin/right = 18.0
-margin/bottom = 21.0
+margin/left = -47.0
+margin/top = -142.0
+margin/right = 22.0
+margin/bottom = 18.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/click_mask = ExtResource( 2 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -81,7 +86,7 @@ default/chorus_send = 0.0
 [node name="_focus_out" type="Sprite" parent="."]
 
 transform/pos = Vector2( -12.0709, -61.4272 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="_focus_in" type="Sprite" parent="."]
 
