@@ -82,11 +82,11 @@ func start(params, p_context):
 
 		_on_mouse_exit(but)
 
-	if has_node("avatars"):
+	if has_node("anchors/avatars"):
 		var avatar = "default"
 		if params.size() >= 3:
 			avatar = params[2]
-		var avatars = get_node("avatars")
+		var avatars = get_node("anchors/avatars")
 		for i in range(avatars.get_child_count()):
 			var c = avatars.get_child(i)
 			if c.get_name() == avatar:
