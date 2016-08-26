@@ -35,7 +35,6 @@ func start(params, p_context):
 	printt("dialog start with params ", params.size())
 	context = p_context
 	cmd = params[0]
-	printt("params is ", cmd)
 	var i = 0
 	var visible = 0
 	for q in cmd:
@@ -43,7 +42,6 @@ func start(params, p_context):
 			i+=1
 			continue
 		var it = item.duplicate()
-		printt("adding item!")
 		var but = it.get_node("button")
 		var label = but.get_node("label")
 
@@ -82,11 +80,11 @@ func start(params, p_context):
 
 		_on_mouse_exit(but)
 
-	if has_node("anchors/avatars"):
+	if has_node("anchor/avatars"):
 		var avatar = "default"
 		if params.size() >= 3:
 			avatar = params[2]
-		var avatars = get_node("anchors/avatars")
+		var avatars = get_node("anchor/avatars")
 		for i in range(avatars.get_child_count()):
 			var c = avatars.get_child(i)
 			if c.get_name() == avatar:
