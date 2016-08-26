@@ -30,7 +30,7 @@ scale_on_map = false
 light_on_map = false
 tooltip = "A bamboo stick"
 action = ""
-events_path = "res://scenes/intro-game/bad_bamboo.esc"
+events_path = "res://scenes/second_scene/bad_bamboo_2.esc"
 global_id = "bad_bamboo_2"
 use_combine = false
 inventory = false
@@ -39,6 +39,7 @@ interact_angle = 90
 talk_animation = "talk"
 active = true
 placeholders = {  }
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="."]
 

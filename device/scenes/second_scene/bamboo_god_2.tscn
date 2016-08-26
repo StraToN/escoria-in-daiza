@@ -65,7 +65,7 @@ scale_on_map = false
 light_on_map = false
 tooltip = "The almighty Panda God"
 action = ""
-events_path = "res://scenes/second_scene/bamboo_god.esc"
+events_path = "res://scenes/second_scene/bad_bamboo_2.esc"
 global_id = "bamboo_god"
 use_combine = false
 inventory = false
@@ -74,6 +74,7 @@ interact_angle = 90
 talk_animation = "talk"
 active = true
 placeholders = {  }
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="."]
 
