@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://ui/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://ui/start-screen-escoria-in-daiza.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/continue-button.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/continue-push.png" type="Texture" id=4]
-[ext_resource path="res://scenes/intro-game/sprites/start-button.png" type="Texture" id=5]
-[ext_resource path="res://scenes/intro-game/sprites/start-push.png" type="Texture" id=6]
-[ext_resource path="res://scenes/intro-game/sprites/quit-button.png" type="Texture" id=7]
-[ext_resource path="res://scenes/intro-game/sprites/quit-push.png" type="Texture" id=8]
+[ext_resource path="res://scenes/intro-game/sprites/bg-button.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/bg-button-pressed.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.fnt" type="BitmapFont" id=5]
 
 [node name="main_menu" type="Control"]
 
@@ -45,6 +42,27 @@ textures/pressed = ExtResource( 4 )
 textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
 
+[node name="Label" type="Label" parent="continue"]
+
+rect/scale = Vector2( 3, 3 )
+hint/tooltip = "Continue the game"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 7.0
+margin/top = 9.0
+margin/right = 190.0
+margin/bottom = 39.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "Continue"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="new_game" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
@@ -58,10 +76,31 @@ margin/bottom = 638.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
-textures/pressed = ExtResource( 6 )
-textures/hover = ExtResource( 6 )
+textures/normal = ExtResource( 3 )
+textures/pressed = ExtResource( 4 )
+textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
+
+[node name="Label" type="Label" parent="new_game"]
+
+rect/scale = Vector2( 3, 3 )
+hint/tooltip = "Start a new game"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 23.0
+margin/top = 5.0
+margin/right = 194.0
+margin/bottom = 35.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "Start"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="exit" type="TextureButton" parent="."]
 
@@ -76,9 +115,30 @@ margin/bottom = 1045.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 7 )
-textures/pressed = ExtResource( 8 )
-textures/hover = ExtResource( 8 )
+textures/normal = ExtResource( 3 )
+textures/pressed = ExtResource( 4 )
+textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
+
+[node name="Label" type="Label" parent="exit"]
+
+rect/scale = Vector2( 3, 3 )
+hint/tooltip = "Quit the game"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 18.0
+margin/top = 3.0
+margin/right = 196.0
+margin/bottom = 33.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "Quit"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

@@ -156,7 +156,9 @@ transform/pos = Vector2( 472.343, 663.334 )
 
 [node name="bamboo_god_2" parent="." instance=ExtResource( 12 )]
 
+visibility/visible = false
 transform/pos = Vector2( 984.846, 590.185 )
+active = false
 
 [node name="player" parent="." instance=ExtResource( 13 )]
 
