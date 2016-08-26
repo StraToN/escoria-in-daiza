@@ -44,7 +44,7 @@ textures/pressed = ExtResource( 4 )
 textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
 
-[node name="Label" type="Label" parent="continue"]
+[node name="UI_CONTINUE" type="Label" parent="continue"]
 
 rect/scale = Vector2( 3, 3 )
 hint/tooltip = "Continue the game"
@@ -59,8 +59,9 @@ margin/bottom = 39.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "Continue"
+text = "UI_CONTINUE"
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -83,7 +84,7 @@ textures/pressed = ExtResource( 4 )
 textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
 
-[node name="Label" type="Label" parent="new_game"]
+[node name="UI_NEW_GAME" type="Label" parent="new_game"]
 
 rect/scale = Vector2( 3, 3 )
 hint/tooltip = "Start a new game"
@@ -98,8 +99,9 @@ margin/bottom = 35.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "Start"
+text = "UI_NEW_GAME"
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -122,7 +124,7 @@ textures/pressed = ExtResource( 4 )
 textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
 
-[node name="Label" type="Label" parent="exit"]
+[node name="UI_QUIT" type="Label" parent="exit"]
 
 rect/scale = Vector2( 3, 3 )
 hint/tooltip = "Quit the game"
@@ -137,8 +139,9 @@ margin/bottom = 33.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "Quit"
+text = "UI_QUIT"
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -161,7 +164,7 @@ textures/pressed = ExtResource( 7 )
 textures/hover = ExtResource( 7 )
 params/scale = Vector2( 0.5, 0.5 )
 
-[node name="Label" type="Label" parent="en"]
+[node name="en" type="Label" parent="en"]
 
 rect/scale = Vector2( 1.6, 1.6 )
 hint/tooltip = "en"
@@ -200,7 +203,7 @@ textures/pressed = ExtResource( 7 )
 textures/hover = ExtResource( 7 )
 params/scale = Vector2( 0.5, 0.5 )
 
-[node name="Label" type="Label" parent="fr"]
+[node name="fr" type="Label" parent="fr"]
 
 rect/scale = Vector2( 1.6, 1.6 )
 hint/tooltip = "fr"
@@ -239,7 +242,7 @@ textures/pressed = ExtResource( 7 )
 textures/hover = ExtResource( 7 )
 params/scale = Vector2( 0.5, 0.5 )
 
-[node name="Label" type="Label" parent="es"]
+[node name="es" type="Label" parent="es"]
 
 rect/scale = Vector2( 1.6, 1.6 )
 hint/tooltip = "es"
@@ -259,5 +262,11 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[connection signal="pressed" from="en" to="." method="_on_language_selected" binds= [ "en" ]]
+
+[connection signal="pressed" from="fr" to="." method="_on_language_selected" binds= [ "fr" ]]
+
+[connection signal="pressed" from="es" to="." method="_on_language_selected" binds= [ "es" ]]
 
 

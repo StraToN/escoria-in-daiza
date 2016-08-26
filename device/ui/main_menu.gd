@@ -113,3 +113,10 @@ func _ready():
 	if !Globals.get("platform/exit_button"):
 		get_node("exit").hide()
 
+
+
+func _on_language_selected(lang):
+	vm.settings.text_lang=lang
+	TranslationServer.set_locale(vm.settings.text_lang)
+	get_tree().call_group(0, "ui", "language_changed")
+	vm.save_settings()
