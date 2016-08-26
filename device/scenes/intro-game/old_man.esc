@@ -8,11 +8,15 @@
 
 say old_man "Please go get the bamboo stick and come back to me." [introduced, !picked_item]
 
-> [introduced, picked_item, !god_appeared]
-	say old_man "Good! Now offer it to our almighty panda god, I’ll summon them for you." default avatar_old_man
-	set_active bamboo_god true
-	cut_scene bamboo_god god_appears
-	set_global god_appeared true
-	stop
+:use inv_good_bamboo
 
-say old_man "Go give the bamboo stick to your god!" default avatar_old_man [god_appeared]
+say old_man "Good! You're qualified for the job! Now go to the forest and get some more bamboo. Be sure to offer them to our almighty panda god, it will give him strength to protect our land." default avatar_old_man
+cut_scene telon fade_out
+change_scene "res://scenes/second_scene/scene.scn"
+cut_scene telon fade_in
+
+:use inv_bad_bamboo
+
+say old_man "Oh no, another perverted young panda… This bamboo is made by humans, little one, not by Mother Earth! Plastic taste. Not good… Now go and give me a true bamboo!" default avatar_old_man
+set_globals i/* false
+set_global picked_item false
