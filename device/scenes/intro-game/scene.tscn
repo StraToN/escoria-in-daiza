@@ -50,6 +50,7 @@ transform/pos = Vector2( 1347.53, 897.092 )
 
 transform/pos = Vector2( 383.883, 617.274 )
 transform/scale = Vector2( 0.7, 0.7 )
+use_custom_z = true
 
 [node name="foreground left" type="Sprite" parent="."]
 
