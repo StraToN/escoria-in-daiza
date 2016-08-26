@@ -1,7 +1,16 @@
 :pick_up
-
+say player "You were hiding little bamboo?"
+say chameleon "Hey! It's mine!"
+say player "Sorry, I need this one in particular for my mission…"
+say chameleon "I'm just kidding, the forest belongs to no one. Takes all the bamboos that you need."
 > [introduced, !picked_item]
 	anim good_bamboo_2 pick_up
 	set_global picked_item true
 	set_global i/inv_good_bamboo true
 	set_active good_bamboo_2 false
+
+:look
+say player "Is it well enough for the pandas' god?"
+
+:talk
+say player "I see you little bamboo!"

@@ -20,3 +20,9 @@ cut_scene telon fade_in
 say old_man "Oh no, another perverted young panda… This bamboo is made by humans, little one, not by Mother Earth! Plastic taste. Not good… Now go and give me a true bamboo!" default avatar_old_man
 set_globals i/* false
 set_global picked_item false
+
+:look
+say good_bamboo "The master know how to please the pandas' god. I need to listen."
+
+:pick_up
+say good_bamboo "He will surely not appreciate it."

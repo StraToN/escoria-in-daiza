@@ -21,3 +21,15 @@ set_state bamboo_god_2 neutral
 :use
 
 stop
+
+:look
+say player "It's the pandas' god! I'm so honored to see it. I must carefully choose the bamboo I'll offer him."
+
+:pick_up
+say player "I don't think he will fit in my bag..."
+
+:talk
+say player "How do you like your bamboos?"
+say bamboo_god_2 "Tasty."
+say player "..."
+say bamboo_god_2 "And local!"
