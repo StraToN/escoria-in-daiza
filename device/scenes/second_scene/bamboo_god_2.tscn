@@ -2,9 +2,9 @@
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
 [ext_resource path="res://scenes/second_scene/sprites/click_mask/spirit-neutral_click_mask.pbm" type="BitMap" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/spirit-angry.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/spirit-happy.png" type="Texture" id=4]
-[ext_resource path="res://scenes/intro-game/sprites/spirit-neutral.png" type="Texture" id=5]
+[ext_resource path="res://scenes/second_scene/sprites/spirit-angry.png" type="Texture" id=3]
+[ext_resource path="res://scenes/second_scene/sprites/spirit-happy.png" type="Texture" id=4]
+[ext_resource path="res://scenes/second_scene/sprites/spirit-neutral.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -65,7 +65,7 @@ scale_on_map = false
 light_on_map = false
 tooltip = "The almighty Panda God"
 action = ""
-events_path = "res://scenes/intro-game/bamboo_god.esc"
+events_path = "res://scenes/second_scene/bamboo_god.esc"
 global_id = "bamboo_god"
 use_combine = false
 inventory = false
