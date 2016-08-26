@@ -10,4 +10,4 @@ say player "I took it off without difficulty."
 say player "This bamboo it's perfect! Maybe a little too much..."
 
 :talk
-say player "Your leaves all have the same size."
+say player "All your leaves have the same size."
