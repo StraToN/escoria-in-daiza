@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://templates/base_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/second_scene/sprites/decor2-background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/second_scene/terrain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-1.png" type="Texture" id=4]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-2.png" type="Texture" id=5]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-3.png" type="Texture" id=6]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-4.png" type="Texture" id=7]
-[ext_resource path="res://scenes/second_scene/bad_bamboo_2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/second_scene/good_bamboo_2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/second_scene/good_bamboo_3.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/second_scene/bamboo_god_2.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/second_scene/player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-left.png" type="Texture" id=13]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-right.png" type="Texture" id=14]
-[ext_resource path="res://scenes/second_scene/cameleon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://globals/item.gd" type="Script" id=5]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-3.png" type="Texture" id=7]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-middle-ground-4.png" type="Texture" id=8]
+[ext_resource path="res://scenes/second_scene/bad_bamboo_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/second_scene/good_bamboo_2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/second_scene/good_bamboo_3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/second_scene/bamboo_god_2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/second_scene/player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-left.png" type="Texture" id=14]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-right.png" type="Texture" id=15]
+[ext_resource path="res://scenes/second_scene/cameleon.tscn" type="PackedScene" id=16]
 
 [node name="scene" instance=ExtResource( 1 )]
 
@@ -34,46 +35,110 @@ bitmaps_scale = Vector2( 1, 1 )
 transform/pos = Vector2( 1011.95, 844.804 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, -150 )
+script/script = ExtResource( 5 )
 __meta__ = { "_edit_lock_":true }
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {  }
 
 [node name="middle_ground_2" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1234.96, 1059.6 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, -25 )
+script/script = ExtResource( 5 )
 __meta__ = { "_edit_lock_":true }
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {  }
 
 [node name="middle_ground_3" type="Sprite" parent="."]
 
 transform/pos = Vector2( 873.55, 817.522 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 0, -22 )
+script/script = ExtResource( 5 )
 __meta__ = { "_edit_lock_":true }
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {  }
 
 [node name="middle_ground_4" type="Sprite" parent="."]
 
 transform/pos = Vector2( 592.388, 772.749 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 0, -120 )
+script/script = ExtResource( 5 )
 __meta__ = { "_edit_lock_":true }
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {  }
 
-[node name="bad_bamboo_2" parent="." instance=ExtResource( 8 )]
+[node name="bad_bamboo_2" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 1039.61, 841.002 )
 
-[node name="good_bamboo_2" parent="." instance=ExtResource( 9 )]
+[node name="good_bamboo_2" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 1665.72, 865.303 )
 
-[node name="good_bamboo_3" parent="." instance=ExtResource( 10 )]
+[node name="good_bamboo_3" parent="." instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 472.343, 663.334 )
 
-[node name="bamboo_god_2" parent="." instance=ExtResource( 11 )]
+[node name="bamboo_god_2" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 984.846, 590.185 )
 
-[node name="player" parent="." instance=ExtResource( 12 )]
+[node name="player" parent="." instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 742.707, 850.866 )
 transform/scale = Vector2( 0.3, 0.3 )
@@ -81,16 +146,16 @@ transform/scale = Vector2( 0.3, 0.3 )
 [node name="foreground left" type="Sprite" parent="."]
 
 transform/pos = Vector2( 236.924, 663.079 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="foreground right" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1569.99, 540.019 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 __meta__ = { "_edit_lock_":true }
 
-[node name="cameleon" parent="." instance=ExtResource( 15 )]
+[node name="cameleon" parent="." instance=ExtResource( 16 )]
 
 transform/pos = Vector2( 1752.96, 675.222 )
 
