@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://ui/confirm_popup.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sprites/quit-dialog.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/yes-button.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/yes-push.png" type="Texture" id=4]
-[ext_resource path="res://scenes/intro-game/sprites/no-button.png" type="Texture" id=5]
-[ext_resource path="res://scenes/intro-game/sprites/no-push.png" type="Texture" id=6]
+[ext_resource path="res://scenes/intro-game/sprites/yes-no-button.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/yes-no-button-pressed.png" type="Texture" id=4]
+[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.fnt" type="BitmapFont" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -84,23 +83,65 @@ textures/pressed = ExtResource( 4 )
 textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
 
+[node name="Label" type="Label" parent="yes"]
+
+rect/scale = Vector2( 2.5, 2.5 )
+hint/tooltip = "Yes"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 71.0
+margin/top = 13.0
+margin/right = 111.0
+margin/bottom = 43.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "Yes"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="no" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 965.0
+margin/left = 971.0
 margin/top = 549.0
-margin/right = 1180.0
+margin/right = 1180.4
 margin/bottom = 643.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
-textures/pressed = ExtResource( 6 )
-textures/hover = ExtResource( 6 )
+textures/normal = ExtResource( 3 )
+textures/pressed = ExtResource( 4 )
+textures/hover = ExtResource( 4 )
 params/scale = Vector2( 0.3, 0.3 )
+
+[node name="Label" type="Label" parent="no"]
+
+rect/scale = Vector2( 2.5, 2.5 )
+hint/tooltip = "No"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 67.0
+margin/top = 17.0
+margin/right = 112.0
+margin/bottom = 47.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "No"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
