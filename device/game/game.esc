@@ -6,4 +6,4 @@ change_scene res://scenes/intro-game/scene.tscn
 
 cut_scene telon fade_in
 
-say old_man "HELLO I'M THE OLD MAN, WELCOME TO THE GAME!!!" default avatar_old_man
+say old_man "Hello I'm the old man, welcome to the game!" default avatar_old_man
