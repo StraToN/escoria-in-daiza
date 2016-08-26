@@ -1,0 +1,27 @@
+:talk
+
+#say player "What a strange critter…"
+#say chameleon "You know I can hear you, right?"
+
+#say player "What? You can talk!?"
+#say chameleon "Sure, can't you?"
+#say player "..."
+#say player "Good point."
+
+?
+        - "You're a chameleon right?"
+                say cameleon "That's right! 
+        - "Do you enjoy our babmoo forest?"
+                say cameleon "Sure, I like it."
+
+:pick_up
+
+say chameleon "Hey! Get your hands off me!"
+set_global chameleon_red true
+anim chameleon turn_red
+sched_event 3 chameleon back_to_green
+
+
+:back_to_green
+anim chameleon turn_red true [chameleon_red]
+
