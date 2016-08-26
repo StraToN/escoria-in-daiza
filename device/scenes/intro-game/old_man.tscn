@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/old_man.png" type="Texture" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/click_mask/old_man_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/old_man.png" type="Texture" id=3]
 
 [node name="old_man" type="Node2D"]
 
@@ -22,16 +23,20 @@ talk_animation = "talk"
 active = true
 placeholders = {  }
 
-[node name="area" type="Control" parent="."]
+[node name="area" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -316.0
-margin/top = -384.0
-margin/right = 318.0
+margin/left = -320.0
+margin/top = -391.0
+margin/right = 320.0
 margin/bottom = 390.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/click_mask = ExtResource( 2 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -45,6 +50,6 @@ autoplay = ""
 
 [node name="Sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 
