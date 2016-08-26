@@ -15,7 +15,10 @@ func set_state(p_state, p_force = false):
 
 	.set_state(p_state, p_force)
 
-	if state == "off":
+	if stream == null:
+		return
+
+	if state == "off" || state == "default":
 		stream.set_stream(null)
 		return
 

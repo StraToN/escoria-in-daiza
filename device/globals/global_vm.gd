@@ -339,6 +339,8 @@ func register_object(name, val):
 	objects[name] = val
 	if name in states:
 		val.set_state(states[name])
+	else:
+		val.set_state("default")
 	if name in actives:
 		val.set_active(actives[name])
 	val.connect("exit_tree", self, "object_exit_scene", [name])
@@ -569,7 +571,7 @@ func save():
 				s = "false"
 			ret.append("set_active " + k + " " + s + "\n")
 
-		if k in states:
+		if k in states && states[k] != "default":
 			ret.append("set_state " + k + " " + states[k] + "\n")
 
 		ret.append("\n")

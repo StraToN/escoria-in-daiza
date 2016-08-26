@@ -292,6 +292,9 @@ func teleport(obj):
 	set_pos(pos)
 	_update_terrain()
 
+func set_state(name):
+	pass
+
 func teleport_pos(x, y):
 	set_pos(Vector2(x, y))
 	_update_terrain()
