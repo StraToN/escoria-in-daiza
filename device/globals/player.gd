@@ -222,6 +222,7 @@ func _check_bounds():
 
 func _update_terrain():
 	var pos = get_pos()
+	set_z(pos.y)
 	var color = terrain.get_terrain(pos)
 	var scale = terrain.get_scale_range(color.b)
 	scale.x = scale.x * pose_scale

@@ -242,11 +242,15 @@ func set_state(p_state, p_force = false):
 
 func teleport(obj):
 	set_pos(obj.get_global_pos())
+	_update_terrain()
 
 func teleport_pos(x, y):
 	set_pos(Vector2(x, y))
+	_update_terrain()
 
 func _update_terrain():
+	if self extends Node2D:
+		set_z(get_pos().y)
 	if !scale_on_map && !light_on_map:
 		return
 	print("updating terrain!")
