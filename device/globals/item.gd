@@ -13,6 +13,7 @@ export(int, -1, 360) var interact_angle = -1
 export var talk_animation = "talk"
 export var active = true setget set_active,get_active
 export var placeholders = {}
+export var use_custom_z = false
 
 var anim_notify = null
 var anim_scale_override = null
@@ -242,11 +243,15 @@ func set_state(p_state, p_force = false):
 
 func teleport(obj):
 	set_pos(obj.get_global_pos())
+	_update_terrain()
 
 func teleport_pos(x, y):
 	set_pos(Vector2(x, y))
+	_update_terrain()
 
 func _update_terrain():
+	if self extends Node2D && !use_custom_z:
+		set_z(get_pos().y)
 	if !scale_on_map && !light_on_map:
 		return
 	print("updating terrain!")
