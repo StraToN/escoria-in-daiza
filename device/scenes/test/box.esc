@@ -1,28 +1,18 @@
 :look
-
 > [box_open]
-	say player "An old newspaper"
-
+	say player box_look_1:"An old newspaper"
 > [!box_open]
-	say player "It's a box"
-
+	say player box_look_2:"It's a box"
 :pick_up
-
 > [box_open]
 	set_global i/inv_news true
 	set_active box false
-
 > [!box_open]
-	say player "It's too heavy!"
-
+	say player box_pick_up_3:"It's too heavy!"
 :open
-
 > [box_open]
-	say player "It's already open"
-
+	say player box_open_4:"It's already open"
 > [!box_open]
 	set_global box_open true
 	set_state box newspaper
-	say player "There was a newspaper inside it"
-
-
+	say player box_open_5:"There was a newspaper inside it"

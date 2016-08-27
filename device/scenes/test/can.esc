@@ -1,9 +1,5 @@
 :pick_up
-
 set_global i/inv_can true
 set_active can false
-
-
 :look
-
-say player "A can"
+say player can_look_1:"A can"
