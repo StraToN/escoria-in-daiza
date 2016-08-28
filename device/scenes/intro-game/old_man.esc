@@ -8,7 +8,7 @@ say old_man old_man_talk_4:"Please go get the bamboo stick and come back to me."
 :use inv_good_bamboo
 say old_man old_man_use_5:"Good! You're qualified for the job! Now go to the forest and get some more bamboo. Be sure to offer them to our almighty panda god, it will give him strength to protect our land." default avatar_old_man
 cut_scene telon fade_out
-change_scene old_man_use_6:"res://scenes/second_scene/scene.scn"
+change_scene res://scenes/second_scene/scene.scn
 cut_scene telon fade_in
 :use inv_bad_bamboo
 say old_man old_man_use_7:"Oh no, another perverted young panda… This bamboo is made by humans, little one, not by Mother Earth! Plastic taste. Not good… Now go and give me a true bamboo!" default avatar_old_man
