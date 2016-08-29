@@ -1,10 +1,8 @@
 :pick_up
 say player good_bamboo_3_pick_up_1:"Come with me." default avatar_panda
-> [introduced, !picked_item]
-	anim good_bamboo_3 pick_up
-	set_global picked_item true
-	set_global i/inv_good_bamboo true
-	set_active good_bamboo_3 false
+anim good_bamboo_3 pick_up
+set_global i/inv_good_bamboo_3 true
+set_active good_bamboo_3 false
 
 :look
 say player good_bamboo_3_look_2:"This one look like delicious." default avatar_panda
