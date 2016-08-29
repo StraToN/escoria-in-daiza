@@ -1,9 +1,33 @@
-:use inv_good_bamboo_2
+:use inv_good_bamboo
+set_global good_bamboo_given true
+set_global i/inv_good_bamboo false
 set_state bamboo_god_2 happy
-say bamboo_god_2 bamboo_god_2_use_1:"Thank you for your kind offering young panda, you shall receive my blessings. I promise to protect you from the humans now and fo the rest of your days!" default avatar_god
-cut_scene bamboo_god_2 god_appears true
-cut_scene telon fade_out
-game_over true true
+say bamboo_god_2 bamboo_god_2_use_3:"Oh! This one looks really tasty! Thanks a lot!" default avatar_god
+sched_event 0 bamboo_god_2 end_game
+
+:use inv_good_bamboo_2
+set_global good_bamboo_2_given true
+set_global i/inv_good_bamboo false
+set_state bamboo_god_2 happy
+say bamboo_god_2 bamboo_god_2_use_4:"Yummy!" default avatar_god
+sched_event 0 bamboo_god_2 end_game
+
+:use inv_good_bamboo_3
+set_global good_bamboo_3_given true
+set_global i/inv_good_bamboo_3 false
+set_state bamboo_god_2 happy
+say bamboo_god_2 bamboo_god_2_use_5:"I will bloat if you keep doing that!" default avatar_god
+sched_event 0 bamboo_god_2 end_game
+
+:end_game
+> [good_bamboo_given, good_bamboo_2_given, good_bamboo_3_given]
+	say bamboo_god_2 bamboo_god_2_use_1:"Thank you for your kind offering young panda, you shall receive my blessings. I promise to protect you from the humans now and fo the rest of your days!" default avatar_god
+	cut_scene bamboo_god_2 god_appears true
+	cut_scene telon fade_out
+	game_over true true
+	stop
+wait 1
+set_state bamboo_god_2 neutral
 
 :use inv_bad_bamboo_2
 set_state bamboo_god_2 angry
