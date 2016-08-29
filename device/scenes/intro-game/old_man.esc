@@ -4,17 +4,21 @@
 	set_global introduced true
 	debug old_man_get:"Player was introduced" old_man_talk_3:"Now searching for the bamboo"
 	stop
-say old_man old_man_get:"Please go get the bamboo stick and come back to me." [introduced, !picked_item]
+say old_man old_man_get:"Please go get the bamboo stick and come back to me." default avatar_old_man [introduced, !picked_item]
+
 :use inv_good_bamboo
 say old_man old_man_bien:"Good! You're qualified for the job! Now go to the forest and get some more bamboo. Be sure to offer them to our almighty panda god, it will give him strength to protect our land." default avatar_old_man
 cut_scene telon fade_out
 change_scene res://scenes/second_scene/scene.scn
 cut_scene telon fade_in
+
 :use inv_bad_bamboo
-say old_man old_man_hello"Oh no, another perverted young panda… This bamboo is made by humans, little one, not by Mother Earth! Plastic taste. Not good… Now go and give me a true bamboo!" default avatar_old_man
+say old_man old_man_hello:"Oh no, another perverted young panda… This bamboo is made by humans, little one, not by Mother Earth! Plastic taste. Not good… Now go and give me a true bamboo!" default avatar_old_man
 set_globals i/* false
 set_global picked_item false
+
 :look
-say good_bamboo old_man_get:"The master know how to please the pandas' god. I need to listen."
+say good_bamboo old_man_get:"The master know how to please the pandas' god. I need to listen." default avatar_panda
+
 :pick_up
-say good_bamboo old_man_get:"He will surely not appreciate it."
+say good_bamboo old_man_get:"He will surely not appreciate it." default avatar_panda

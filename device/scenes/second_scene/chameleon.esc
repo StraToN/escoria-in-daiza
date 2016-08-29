@@ -1,5 +1,6 @@
 :look
 say player chameleon_whe:"Maybe he can help me..." default avatar_panda
+
 :talk
 say player chameleon_talk_2:"What a strange critter…" default avatar_panda
 say chameleon chameleon_talk_3:"You know I can hear you, right?" default avatar_chameleon
@@ -34,11 +35,13 @@ say player chameleon_talk_7:"Good point." default avatar_panda
 						say chameleon chameleon_talk_28:"Oh, I see..." default avatar_chameleon
 					- chameleon_talk_29:"Imploring the Pandas' god"
 						say player chameleon_talk_30:"We are making offerings for the Pandas' god so that we can ask him for help. I'm actually gathering some fine bamboos for him! It would be my very first offering to him." default avatar_panda
-						say chameleon chameleon_talk_31:"Well! Today is your lucky day! default avatar_chameleo"
+						say chameleon chameleon_talk_31:"Well! Today is your lucky day!" default avatar_chameleon
+
 :pick_up
-say chameleon chameleon_pick_up_32:"Hey! Get your hands off me!"
+say chameleon chameleon_pick_up_32:"Hey! Get your hands off me!" default avatar_chameleon
 set_global chameleon_red true
 anim chameleon turn_red
 sched_event 3 chameleon back_to_green
+
 :back_to_green
 anim chameleon turn_red true [chameleon_red]
