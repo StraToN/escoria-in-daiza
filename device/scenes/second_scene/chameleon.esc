@@ -37,6 +37,7 @@ say player chameleon_talk_7:"Good point." default avatar_panda
 						say player chameleon_talk_30:"We are making offerings for the Pandas' god so that we can ask him for help. I'm actually gathering some fine bamboos for him! It would be my very first offering to him." default avatar_panda
 						say chameleon chameleon_talk_31:"Well! Today is your lucky day, as I am the Pandas' god! You passed my little test, now bring me the bamboo you found." default avatar_chameleon
 						anim chameleon disapear
+						set_global chameleon_disapeared true
 						set_active bamboo_god_2 true
 						cut_scene bamboo_god_2 god_appears
 						set_active chameleon false

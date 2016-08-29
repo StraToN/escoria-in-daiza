@@ -7,7 +7,7 @@ sched_event 0 bamboo_god_2 end_game
 
 :use inv_good_bamboo_2
 set_global good_bamboo_2_given true
-set_global i/inv_good_bamboo false
+set_global i/inv_good_bamboo_2 false
 set_state bamboo_god_2 happy
 say bamboo_god_2 bamboo_god_2_use_4:"Yummy!" default avatar_god
 sched_event 0 bamboo_god_2 end_game
