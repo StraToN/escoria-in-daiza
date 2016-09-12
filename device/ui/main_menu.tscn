@@ -106,6 +106,46 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="credits" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 348.0
+margin/top = 845.0
+margin/right = 913.0
+margin/bottom = 940.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+textures/pressed = ExtResource( 4 )
+textures/hover = ExtResource( 4 )
+params/scale = Vector2( 0.3, 0.3 )
+
+[node name="UI_CREDITS" type="Label" parent="credits"]
+
+rect/scale = Vector2( 3, 3 )
+hint/tooltip = "Start a new game"
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 23.0
+margin/top = 5.0
+margin/right = 194.0
+margin/bottom = 35.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "UI_CREDITS"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="exit" type="TextureButton" parent="."]
 
 focus/ignore_mouse = false
