@@ -11,7 +11,9 @@ UI_YES,Yes,Oui,Si
 UI_NO,No,Non,No
 UI_QUIT_CONFIRM,Do you want to quit the game¬†?,Souhaitez-vous vraiment quitter le jeu¬†?,Queres realmente quitar el juego¬†?
 UI_NEW_GAME_CONFIRM,Start new game? Your unsaved progress will be lost,Commencer un nouveau jeu¬†? Vous n'avez pas sauvegard√© votre progression‚Ä¶,Empezar un nuevo juego¬†? No has salvado su progresion‚Ä¶
-UI_CREDITS,"Escoria in Daïza was created by Élisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt and Adrien ""Kooda"" Ramos in Rennes for the « Creating Point and Click Games with Escoria » booksprint from August 22 to 26 in Rennes, France","Escoria en Daïza a été créé par Élisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt et Adrien ""Kooda"" Ramos à Rennes pour le booksprint « Creating Point and Click Games with Escoria » du 22 au 26 août 2016 à Rennes, France",
+UI_BACK,Back to the main menu,Retour au menu principal,
+UI_CREDITS,Credits,Crédits,
+CREDITS,"Escoria in Daïza was created by Élisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt and Adrien ""Kooda"" Ramos in Rennes for the « Creating Point and Click Games with Escoria » booksprint from August 22 to 26 in Rennes, France","Escoria en Daïza a été créé par Élisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt et Adrien ""Kooda"" Ramos à Rennes pour le booksprint « Creating Point and Click Games with Escoria » du 22 au 26 août 2016 à Rennes, France",
 old_man.tooltip,A wise old forest man,Un vieux sage de la forêt,
 bad_bamboo.tooltip,A bamboo that smells new,Un bambou qui sent le neuf,
 inv_bad_bamboo.tooltip,the bamboo that smells new,le bambou qui sent le neuf,
