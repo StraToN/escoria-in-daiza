@@ -20,6 +20,8 @@ Credits
   - [Gaëtan "Reptifur" Hilt](http://repti.fr)
   - [Adrien "Kooda" Ramos](http://upyum.com)
 
+Contributions to translation : Ranito and Chaosprower
+
 
 Licenses
 --------
