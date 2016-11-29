@@ -40,23 +40,29 @@ transform/pos = Vector2( 953.971, 236.176 )
 transform/scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "walk_right"
-frame = 1
+frame = 7
 playing = true
 
-[node name="text" type="RichTextLabel" parent="."]
+[node name="CREDITS" type="Label" parent="."]
 
-focus/ignore_mouse = false
+focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 471.0
-margin/top = 403.0
-margin/right = 1482.0
-margin/bottom = 907.0
-custom_fonts/normal_font = ExtResource( 10 )
-bbcode/enabled = true
-bbcode/bbcode = "CREDITS"
-visible_characters = -1
+size_flags/vertical = 0
+margin/left = 423.0
+margin/top = 434.0
+margin/right = 1489.0
+margin/bottom = 902.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "CREDITS"
+align = 1
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="back" type="TextureButton" parent="."]
 

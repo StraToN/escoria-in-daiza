@@ -5,9 +5,7 @@
 	set_global picked_item true
 	set_global i/inv_bad_bamboo true
 	set_active bad_bamboo false
-
 :look
 say bad_bamboo bad_bamboo_look_2:"This bamboo looks so shiny and slick." default avatar_panda
-
 :talk
 say bad_bamboo bad_bamboo_talk_3:"Hello bamboo, where do you come from?" default avatar_panda
