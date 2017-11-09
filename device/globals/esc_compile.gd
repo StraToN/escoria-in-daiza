@@ -89,10 +89,10 @@ func read_line(state):
 
 func is_comment(line):
 	for i in range(0, line.length()):
-		var char = line[i]
-		if char == "#":
+		var c = line[i]
+		if c == "#":
 			return true
-		if char != " " && char != "\t":
+		if c != " " && c != "\t":
 			return false
 	return true
 

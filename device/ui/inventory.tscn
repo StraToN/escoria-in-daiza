@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://globals/inventory.gd" type="Script" id=1]
+[ext_resource path="res://scenes/intro-game/sprites/panier2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/arrow.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/arrow-pressed.png" type="Texture" id=4]
+[ext_resource path="res://game/inventory_items.tscn" type="PackedScene" id=5]
+
+
+[node name="inventory" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 1 )
+
+[node name="basket" type="Sprite" parent="."]
+
+transform/pos = Vector2( 303.053, 147.432 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="slots" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="Position2D" type="Position2D" parent="slots"]
+
+transform/pos = Vector2( 256.746, 161.195 )
+
+[node name="arrow_prev" type="TextureButton" parent="."]
+
+rect/rotation = 180.0
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 103.0
+margin/top = 310.0
+margin/right = 271.0
+margin/bottom = 458.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+textures/pressed = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="arrow_next" type="TextureButton" parent="."]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 396.0
+margin/top = 252.0
+margin/right = 564.0
+margin/bottom = 400.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+textures/pressed = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="items" parent="." instance=ExtResource( 5 )]
+
+visibility/visible = false
+
+[node name="actions" type="Control" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+

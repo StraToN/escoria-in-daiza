@@ -1,3 +1,4 @@
+
 func start(params, level):
 	var type
 	if params.size() < 2 || !has_resource(params[1]):
@@ -5,7 +6,7 @@ func start(params, level):
 	else:
 		type = params[1]
 
-	type = type + Globals.get("platform/dialog_type_suffix")
+	type = type + ProjectSettings.get("platform/dialog_type_suffix")
 
 	printt("******* instancing dialog ", type)
 

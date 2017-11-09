@@ -1,0 +1,99 @@
+[gd_scene format=2]
+
+[node name="items" type="Node2D"]
+
+[node name="inv_bad_bamboo_origin" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="area" type="TextureButton" parent="inv_bad_bamboo_origin"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+[node name="inv_bad_bamboo_origin1" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="area" type="TextureButton" parent="inv_bad_bamboo_origin1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+[node name="inv_good_bamboo_origin" type="Node2D" parent="."]
+
+[node name="area" type="TextureButton" parent="inv_good_bamboo_origin"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+[node name="inv_good_bamboo_origin1" type="Node2D" parent="."]
+
+[node name="area" type="TextureButton" parent="inv_good_bamboo_origin1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+[node name="inv_good_bamboo_origin2" type="Node2D" parent="."]
+
+[node name="area" type="TextureButton" parent="inv_good_bamboo_origin2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+
+

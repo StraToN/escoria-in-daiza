@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sprites/decor-background.jpg" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://scenes/intro-game/old_man.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/intro-game/sprites/decor-foreground-left.png" type="Texture" id=7]
 [ext_resource path="res://scenes/intro-game/sprites/decor-foreground-right.png" type="Texture" id=8]
-[ext_resource path="res://globals/game.scn" type="PackedScene" id=9]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=9]
+
 
 [node name="scene" type="Node2D"]
 
