@@ -73,7 +73,6 @@ func _quit_game(p_confirm):
 func language_changed():
 	for l in labels:
 		l.set_text(l.get_name())
-		printt("label for ", l.get_name(), TranslationServer.translate(l.get_name()))
 
 func _find_labels(p = null):
 	if p == null:
@@ -91,6 +90,7 @@ func set_continue_button():
 		get_node("continue").set_disabled(true)
 		#get_node("continue").hide()
 
+
 func _on_language_selected(lang):
 	vm.settings.text_lang=lang
 	TranslationServer.set_locale(vm.settings.text_lang)
@@ -98,7 +98,6 @@ func _on_language_selected(lang):
 	vm.save_settings()
 
 func _ready():
-	printt("** locale is ", TranslationServer.get_locale())
 	get_node("new_game").connect("pressed", self, "newgame_pressed")
 	get_node("continue").connect("pressed", self, "continue_pressed")
 	#get_node("save").connect("pressed", self, "save_pressed")
