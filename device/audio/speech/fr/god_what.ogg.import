@@ -1,0 +1,10 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/god_what.ogg-d4aa6d41830f04434e155bb774d13a21.oggstr"
+
+[params]
+
+loop=true
+loop_offset=0

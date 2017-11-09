@@ -1,5 +1,6 @@
+extends Control
+
 var background = null
-var vm
 
 func set_tooltip(text):
 	printt("hud got tooltip text ", text)
@@ -26,11 +27,11 @@ func _on_menu_pressed():
 	if vm.can_save() && vm.can_interact() && vm.menu_enabled():
 		get_node("/root/main").load_menu("res://game/ui/main_menu.xml")
 	else:
-		#get_tree().call_group(0, "game", "ui_blocked")
+		#get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "ui_blocked")
 		if vm.menu_enabled():
-			get_node("/root/main").load_menu("res://game/ui/in_game_menu.scn")
+			get_node("/root/main").load_menu("res://game/ui/in_game_menu.tscn")
 		else:
-			get_tree().call_group(0, "game", "ui_blocked")
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "ui_blocked")
 
 
 func menu_opened():
@@ -40,21 +41,20 @@ func menu_closed():
 	show()
 
 func _ready():
-	vm = get_node("/root/vm")
 	add_to_group("hud")
 	add_to_group("game")
 	#get_node("inv_toggle").connect("pressed", self, "inv_toggle")
 	#get_node("inv_toggle").set_focus_mode(Control.FOCUS_NONE)
 	
 	#get_node("buttons").hide()
-	if Globals.get("platform/show_ingame_buttons"):
+	if ProjectSettings.get("platform/show_ingame_buttons"):
 		if (not get_node("inv_toggle").is_hidden()):
 			get_node("buttons").show()
 		
 		var p = get_parent().get_parent().get_parent()
 		for i in range(0, p.get_child_count()):
 			var c = p.get_child(i)
-			if (c extends preload("res://globals/background.gd")):
+			if (c is preload("res://globals/background.gd")):
 				background = c
 				break
 				

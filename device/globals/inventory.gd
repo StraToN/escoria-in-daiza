@@ -1,6 +1,5 @@
 extends Control
 
-var vm
 var item_list = []
 var page = 0
 
@@ -64,9 +63,9 @@ func sort_items():
 		elif count >= page_size * page:
 			var slot = count - page_size * page
 			c.show()
-			printt("showing item", c.global_id, slots.get_child(slot).get_global_pos())
+			printt("showing item", c.global_id, slots.get_child(slot).get_global_position())
 			#printt("no focus")
-			c.set_global_pos(slots.get_child(slot).get_global_pos())
+			c.set_global_position(slots.get_child(slot).get_global_position())
 			#c.set_focus_mode(Control.FOCUS_NONE)
 			if !focus:
 				#c.grab_focus()
@@ -108,7 +107,7 @@ func look_toggled(pressed):
 		current_action = "look"
 	else:
 		current_action = "use"
-	get_tree().call_group(0, "game", "clear_action")
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clear_action")
 
 func _input(event):
 	if !vm.can_interact():
@@ -118,7 +117,7 @@ func _input(event):
 
 func log_button_pressed():
 	close()
-	get_tree().call_group(0, "game", "open_log")
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "open_log")
 	
 func _on_open_inventory_signal(open):
 	if (open):
@@ -132,7 +131,6 @@ func action_pressed(n):
 		but.set_pressed(but.get_name() == n)
 
 func _ready():
-	vm = get_tree().get_root().get_node("vm")
 	vm.connect("inventory_changed", self, "inventory_changed")
 	vm.connect("open_inventory", self, "_on_open_inventory_signal")
 	vm.connect("global_changed", self, "global_changed")
