@@ -18,6 +18,7 @@ mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="tooltip" type="Label" parent="."]
 
@@ -43,10 +44,11 @@ max_lines_visible = -1
 
 [node name="inventory" parent="." instance=ExtResource( 2 )]
 
-margin_left = 702.0
-margin_top = 457.0
-margin_right = 742.0
-margin_bottom = 497.0
+margin_left = 1287.0
+margin_top = 746.0
+margin_right = 1327.0
+margin_bottom = 786.0
+_sections_unfolded = [ "Rect" ]
 
 [node name="verb_menu" parent="." instance=ExtResource( 3 )]
 
@@ -56,5 +58,6 @@ margin_right = 103.0
 margin_bottom = 559.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 

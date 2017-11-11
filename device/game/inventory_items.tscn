@@ -1,8 +1,31 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://globals/item.gd" type="Script" id=1]
+[ext_resource path="res://scenes/intro-game/sprites/bad-bamboo.png" type="Texture" id=2]
 
 [node name="items" type="Node2D"]
 
 [node name="inv_bad_bamboo_origin" type="Node2D" parent="."]
+
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "weird bamboo stick"
+action = ""
+events_path = ""
+global_id = "inv_bad_bamboo"
+use_combine = true
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="inv_bad_bamboo_origin"]
 
@@ -10,6 +33,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 279.0
+margin_top = -136.0
+margin_right = 542.0
+margin_bottom = 418.0
+rect_rotation = -90.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -19,8 +47,30 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="inv_bad_bamboo_origin1" type="Node2D" parent="."]
+
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "weird bamboo stick"
+action = ""
+events_path = ""
+global_id = "inv_bad_bamboo_2"
+use_combine = true
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="inv_bad_bamboo_origin1"]
 
@@ -37,8 +87,29 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+_sections_unfolded = [ "Textures" ]
 
 [node name="inv_good_bamboo_origin" type="Node2D" parent="."]
+
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "bamboo stick"
+action = ""
+events_path = ""
+global_id = "inv_good_bamboo"
+use_combine = true
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="inv_good_bamboo_origin"]
 
@@ -58,6 +129,26 @@ group = null
 
 [node name="inv_good_bamboo_origin1" type="Node2D" parent="."]
 
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "bamboo stick"
+action = ""
+events_path = ""
+global_id = "inv_good_bamboo_2"
+use_combine = true
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
 [node name="area" type="TextureButton" parent="inv_good_bamboo_origin1"]
 
 anchor_left = 0.0
@@ -75,6 +166,26 @@ shortcut = null
 group = null
 
 [node name="inv_good_bamboo_origin2" type="Node2D" parent="."]
+
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "bamboo stick"
+action = ""
+events_path = ""
+global_id = "inv_good_bamboo_3"
+use_combine = true
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="inv_good_bamboo_origin2"]
 

@@ -32,19 +32,25 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 action = "walk"
 
 [node name="bad_bamboo" parent="." instance=ExtResource( 4 )]
 
+position = Vector2( 1121.21, 884.903 )
+z = 884
 script = ExtResource( 5 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
 animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
-tooltip = ""
+tooltip = "A bamboo stick"
 action = ""
-events_path = ""
-global_id = ""
+events_path = "res://scenes/intro-game/bad_bamboo.esc"
+global_id = "bad_bamboo"
 use_combine = false
 inventory = false
 use_action_menu = true
@@ -58,17 +64,18 @@ use_custom_z = false
 
 [node name="good_bamboo" parent="." instance=ExtResource( 6 )]
 
-position = Vector2( 600, 100 )
+position = Vector2( 1347.53, 897.092 )
+z = 897
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z" ]
 animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
-tooltip = ""
+tooltip = "A bamboo stick"
 action = ""
-events_path = ""
-global_id = ""
+events_path = "res://scenes/intro-game/good_bamboo.esc"
+global_id = "good_bamboo"
 use_combine = false
 inventory = false
 use_action_menu = true
@@ -82,6 +89,8 @@ use_custom_z = false
 
 [node name="old_man" parent="." instance=ExtResource( 7 )]
 
+position = Vector2( 383.883, 617.274 )
+scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 tooltip = ""
@@ -94,16 +103,21 @@ placeholders = {
 
 [node name="foreground left" type="Sprite" parent="."]
 
+position = Vector2( 170, 540 )
 texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset", "Region" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Z" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="foreground right" type="Sprite" parent="."]
 
-position = Vector2( 1000, 200 )
+position = Vector2( 1642, 540 )
 texture = ExtResource( 9 )
-centered = false
 _sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="game" parent="." instance=ExtResource( 10 )]
 
