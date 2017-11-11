@@ -4,8 +4,6 @@
 
 [node name="inv_bad_bamboo_origin" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="area" type="TextureButton" parent="inv_bad_bamboo_origin"]
 
 anchor_left = 0.0
@@ -23,8 +21,6 @@ shortcut = null
 group = null
 
 [node name="inv_bad_bamboo_origin1" type="Node2D" parent="."]
-
-editor/display_folded = true
 
 [node name="area" type="TextureButton" parent="inv_bad_bamboo_origin1"]
 

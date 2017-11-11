@@ -121,21 +121,32 @@ alignment = 0
 
 [node name="default" type="Sprite" parent="anchor/avatars"]
 
+centered = false
+_sections_unfolded = [ "Offset" ]
+
 [node name="avatar_old_man" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="avatar_panda" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="avatar_chameleon" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="avatar_god" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="item" type="Control" parent="."]
 

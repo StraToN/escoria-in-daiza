@@ -53,6 +53,8 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="anchor"]
 
 texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="text" type="RichTextLabel" parent="anchor"]
 
@@ -79,21 +81,32 @@ override_selected_font_color = false
 
 [node name="default" type="Sprite" parent="anchor/avatars"]
 
+centered = false
+_sections_unfolded = [ "Offset" ]
+
 [node name="avatar_old_man" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="avatar_panda" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 5 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="avatar_chameleon" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="avatar_god" type="Sprite" parent="anchor/avatars"]
 
 texture = ExtResource( 7 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
