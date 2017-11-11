@@ -1,3 +1,4 @@
+extends Control
 
 var target = null
 var slot = ""
@@ -18,7 +19,6 @@ func button_pressed(p_confirm):
 	if target != null:
 		target.call_deferred(slot, p_confirm)
 
-
 	close()
 
 func menu_collapsed():
@@ -31,7 +31,6 @@ func close():
 		var cur = anim.get_current_animation()
 		if cur == "close":
 			return
-
 	anim.play("close")
 
 func anim_finished():

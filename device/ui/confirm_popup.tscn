@@ -1,21 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=1]
+[ext_resource path="res://ui/confirm_popup.gd" type="Script" id=1]
+[ext_resource path="res://scenes/intro-game/sprites/quit-dialog.png" type="Texture" id=2]
+[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/yes-no-button.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/yes-no-button-pressed.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
 length = 1.0
 loop = false
 step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=2]
 
 length = 1.0
 loop = false
 step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="confirm_popup" type="Control"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -25,6 +52,8 @@ rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Panel" type="TextureButton" parent="."]
 
@@ -32,6 +61,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 667.0
+margin_top = 312.0
+margin_right = 3056.0
+margin_bottom = 1801.0
+rect_scale = Vector2( 0.24, 0.24 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -41,6 +75,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="message" type="Label" parent="."]
 
@@ -53,7 +89,7 @@ rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.807843, 0.156863, 0.219608, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "Do you want 
@@ -71,6 +107,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 755.0
+margin_top = 549.0
+margin_right = 1453.0
+margin_bottom = 860.0
+rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -80,6 +121,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="UI_YES" type="Label" parent="yes"]
 
@@ -87,12 +132,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 59.0
+margin_top = 13.0
+margin_right = 101.0
+margin_bottom = 43.0
+rect_scale = Vector2( 2.5, 2.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_YES"
@@ -101,6 +151,7 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect", "Size Flags" ]
 
 [node name="no" type="TextureButton" parent="."]
 
@@ -108,6 +159,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 986.0
+margin_top = 549.0
+margin_right = 1684.0
+margin_bottom = 860.0
+rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -117,6 +173,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="UI_NO" type="Label" parent="no"]
 
@@ -124,12 +184,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 14.0
+margin_right = 105.0
+margin_bottom = 44.0
+rect_scale = Vector2( 2.5, 2.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_NO"
@@ -138,6 +203,7 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect", "Size Flags", "Visibility", "custom_colors" ]
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -150,5 +216,6 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+_sections_unfolded = [ "Playback Options", "playback" ]
 
 
