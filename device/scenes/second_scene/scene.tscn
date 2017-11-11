@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/second_scene/sprites/decor2-background.png" type="Texture" id=2]
@@ -14,12 +14,10 @@
 [ext_resource path="res://scenes/second_scene/good_bamboo_3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/second_scene/bamboo_god_2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/second_scene/player.tscn" type="PackedScene" id=14]
-[ext_resource path="res://globals/player.gd" type="Script" id=15]
-[ext_resource path="res://scenes/second_scene/player_animations.gd" type="Script" id=16]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-left.png" type="Texture" id=17]
-[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-right.png" type="Texture" id=18]
-[ext_resource path="res://scenes/second_scene/chameleon.tscn" type="PackedScene" id=19]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-left.png" type="Texture" id=15]
+[ext_resource path="res://scenes/second_scene/sprites/decor2-foreground-right.png" type="Texture" id=16]
+[ext_resource path="res://scenes/second_scene/chameleon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=18]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -47,6 +45,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
 script = ExtResource( 3 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 action = "walk"
 
 [node name="terrain" type="Navigation2D" parent="."]
@@ -65,12 +64,16 @@ scale_max = 1.0
 
 navpoly = SubResource( 1 )
 enabled = true
+_sections_unfolded = [ "Transform", "Z" ]
 
 [node name="middle_ground_1" type="Sprite" parent="."]
 
+position = Vector2( 1011.95, 844.804 )
+z = 844
 texture = ExtResource( 5 )
 offset = Vector2( 0, -150 )
 script = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -95,11 +98,12 @@ use_custom_z = false
 
 [node name="middle_ground_2" type="Sprite" parent="."]
 
+position = Vector2( 1234.96, 1059.6 )
+z = 1059
 texture = ExtResource( 7 )
-centered = false
 offset = Vector2( 0, -25 )
 script = ExtResource( 6 )
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -124,11 +128,12 @@ use_custom_z = false
 
 [node name="middle_ground_3" type="Sprite" parent="."]
 
+position = Vector2( 873.55, 817.522 )
+z = 817
 texture = ExtResource( 8 )
-centered = false
 offset = Vector2( 0, -22 )
 script = ExtResource( 6 )
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -153,9 +158,12 @@ use_custom_z = false
 
 [node name="middle_ground_4" type="Sprite" parent="."]
 
+position = Vector2( 592.388, 772.749 )
+z = 772
 texture = ExtResource( 9 )
 offset = Vector2( 0, -120 )
 script = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Region", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -180,7 +188,10 @@ use_custom_z = false
 
 [node name="bad_bamboo_2" parent="." instance=ExtResource( 10 )]
 
+position = Vector2( 1039.61, 841.002 )
+z = 841
 script = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z" ]
 animations = null
 speed = 300
 scale_on_map = false
@@ -246,7 +257,10 @@ use_custom_z = false
 
 [node name="bamboo_god_2" parent="." instance=ExtResource( 13 )]
 
+position = Vector2( 984.846, 590.185 )
+z = 590
 script = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z" ]
 animations = null
 speed = 300
 scale_on_map = false
@@ -268,48 +282,44 @@ use_custom_z = false
 
 [node name="player" parent="." instance=ExtResource( 14 )]
 
-position = Vector2( 500, 500 )
-z = 500
-script = ExtResource( 15 )
-_sections_unfolded = [ "Transform" ]
-speed = 300
-v_speed_damp = 1.0
-animations = ExtResource( 16 )
-camera_limits = Rect2( 0, 0, 0, 0 )
-telekinetic = false
+position = Vector2( 717.714, 739.534 )
+z = 739
+speed = 1000
 placeholders = {
 
 }
 
 [node name="foreground left" type="Sprite" parent="."]
 
-texture = ExtResource( 17 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+position = Vector2( 236.924, 663.079 )
+z = 2000
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="foreground right" type="Sprite" parent="."]
 
-texture = ExtResource( 18 )
-centered = false
-offset = Vector2( 1300, 0 )
-_sections_unfolded = [ "Offset", "Transform" ]
+position = Vector2( 1569.99, 540.019 )
+z = 2000
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="chameleon" parent="." instance=ExtResource( 19 )]
+[node name="chameleon" parent="." instance=ExtResource( 17 )]
 
-position = Vector2( 1000, 400 )
+position = Vector2( 1752.96, 675.222 )
+z = 3000
 script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z" ]
 animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
-tooltip = "Chameleon"
+tooltip = "A little cameleon"
 action = ""
 events_path = "res://scenes/second_scene/chameleon.esc"
 global_id = "chameleon"
@@ -322,8 +332,8 @@ active = true
 placeholders = {
 
 }
-use_custom_z = false
+use_custom_z = true
 
-[node name="game" parent="." instance=ExtResource( 20 )]
+[node name="game" parent="." instance=ExtResource( 18 )]
 
 

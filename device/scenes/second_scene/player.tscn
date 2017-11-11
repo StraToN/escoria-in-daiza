@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_0.png" type="Texture" id=1]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_1.png" type="Texture" id=2]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_3.png" type="Texture" id=4]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_4.png" type="Texture" id=5]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_5.png" type="Texture" id=6]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_6.png" type="Texture" id=7]
+[ext_resource path="res://globals/player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/second_scene/player_animations.gd" type="Script" id=2]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_0.png" type="Texture" id=3]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_1.png" type="Texture" id=4]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_3.png" type="Texture" id=6]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_4.png" type="Texture" id=7]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_5.png" type="Texture" id=8]
+[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_6.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -56,13 +58,24 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "walk-right",
 "speed": 10.0
 } ]
 
 [node name="player" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z" ]
+speed = 500
+v_speed_damp = 1.0
+animations = ExtResource( 2 )
+camera_limits = Rect2( 0, 0, 0, 0 )
+telekinetic = false
+placeholders = {
+
+}
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
