@@ -10,12 +10,12 @@ config_version=3
 
 [application]
 
-run/main_scene="res://main.tscn"
-main_scene="res://globals/scene_main.tscn"
+run/main_scene="res://globals/scene_main.tscn"
 max_voice_volume=2
 save_data="res://globals/save_data.gd"
 speech_suffix=".spx"
 tooltip_lang_default="en"
+main_scene="res://globals/scene_main.tscn"
 
 [autoload]
 
