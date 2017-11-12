@@ -10,6 +10,7 @@ config_version=3
 
 [application]
 
+config/name="Escoria in Daiza"
 run/main_scene="res://globals/scene_main.tscn"
 max_voice_volume=2
 save_data="res://globals/save_data.gd"
@@ -91,7 +92,7 @@ windowed_available=true
 
 [ui]
 
-credits=""
+credits="res://ui/credits.tscn"
 in_game_menu=""
 main_menu="res://ui/main_menu.tscn"
 savegames=""

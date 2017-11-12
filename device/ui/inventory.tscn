@@ -98,6 +98,8 @@ _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="items" parent="." instance=ExtResource( 4 )]
 
+visible = false
+
 [node name="actions" type="Control" parent="."]
 
 anchor_left = 0.0
