@@ -214,10 +214,11 @@ placeholders = {
 
 [node name="bamboo_god_2" parent="." instance=ExtResource( 13 )]
 
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 984.846, 590.185 )
 z = 590
 script = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Z" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z" ]
 animations = null
 speed = 300
 scale_on_map = false

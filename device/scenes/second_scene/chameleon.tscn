@@ -10,15 +10,15 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("_focus_out:visibility/opacity")
-tracks/0/interp = 2
+tracks/0/path = NodePath("_focus_out:modulate")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -99,6 +99,6 @@ autoplay = ""
 
 position = Vector2( 0.598524, -0.374741 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
 

@@ -15,15 +15,15 @@ length = 0.25
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("anchor:visible")
+tracks/0/path = NodePath("anchor:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -32,7 +32,7 @@ length = 0.25
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("anchor:visibility/opacity")
+tracks/0/path = NodePath("anchor:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="dialog_instance" type="Node2D"]
@@ -56,12 +56,14 @@ fixed_pos = true
 
 [node name="anchor" type="Node2D" parent="."]
 
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -322.438, 28.8088 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="Sprite" type="Sprite" parent="anchor"]
 
 position = Vector2( 7.74872, 4.7569 )
+scale = Vector2( 0.473106, 0.473106 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Z" ]
 
@@ -89,38 +91,45 @@ bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
 override_selected_font_color = false
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
 
 [node name="avatars" type="Node2D" parent="anchor"]
 
+position = Vector2( -209.506, -3.05912 )
+scale = Vector2( 1.64952, 1.68865 )
+_sections_unfolded = [ "Transform", "Z" ]
+
 [node name="default" type="Sprite" parent="anchor/avatars"]
 
-centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="avatar_old_man" type="Sprite" parent="anchor/avatars"]
 
+position = Vector2( -2.22817, 13.0594 )
+scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 5 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="avatar_panda" type="Sprite" parent="anchor/avatars"]
 
+position = Vector2( -4.61213, 5.15878 )
+scale = Vector2( 0.158458, 0.158458 )
 texture = ExtResource( 6 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="avatar_chameleon" type="Sprite" parent="anchor/avatars"]
 
+position = Vector2( 0.815331, 9.15499 )
+scale = Vector2( 0.646386, 0.646386 )
 texture = ExtResource( 7 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 
 [node name="avatar_god" type="Sprite" parent="anchor/avatars"]
 
+position = Vector2( -2.65737, 5.24705 )
+scale = Vector2( 0.24663, 0.24663 )
 texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -133,5 +142,6 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+_sections_unfolded = [ "playback" ]
 
 
