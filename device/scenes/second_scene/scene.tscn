@@ -240,8 +240,8 @@ use_custom_z = false
 
 [node name="player" parent="." instance=ExtResource( 14 )]
 
-position = Vector2( 717.714, 739.534 )
-z = 739
+position = Vector2( 742.707, 850.866 )
+z = 850
 speed = 1000
 placeholders = {
 

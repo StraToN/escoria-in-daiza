@@ -91,6 +91,7 @@ autoplay = "standing"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
+position = Vector2( 0, -334.741 )
 frames = SubResource( 3 )
 animation = "walk-right"
 
