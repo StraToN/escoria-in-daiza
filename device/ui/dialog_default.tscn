@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scenes/intro-game/sprites/dialogue.png" type="Texture" id=1]
-[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_Italic_16.font" type="BitmapFont" id=2]
-[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/avatar_old_man.png" type="Texture" id=4]
-[ext_resource path="res://scenes/second_scene/sprites/avatar_panda.png" type="Texture" id=5]
-[ext_resource path="res://scenes/second_scene/sprites/avatar_chameleon.png" type="Texture" id=6]
-[ext_resource path="res://scenes/second_scene/sprites/avatar_spirit.png" type="Texture" id=7]
+[ext_resource path="res://globals/dialog_instance.gd" type="Script" id=1]
+[ext_resource path="res://scenes/intro-game/sprites/dialogue.png" type="Texture" id=2]
+[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_Italic_16.font" type="BitmapFont" id=3]
+[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/avatar_old_man.png" type="Texture" id=5]
+[ext_resource path="res://scenes/second_scene/sprites/avatar_panda.png" type="Texture" id=6]
+[ext_resource path="res://scenes/second_scene/sprites/avatar_chameleon.png" type="Texture" id=7]
+[ext_resource path="res://scenes/second_scene/sprites/avatar_spirit.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -44,17 +45,25 @@ tracks/0/keys = {
 
 [node name="dialog_instance" type="Node2D"]
 
+position = Vector2( 1277.85, 683.601 )
+z = 1080
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z" ]
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
+fixed_pos = true
 
 [node name="anchor" type="Node2D" parent="."]
 
+position = Vector2( -322.438, 28.8088 )
+_sections_unfolded = [ "Transform", "Z" ]
+
 [node name="Sprite" type="Sprite" parent="anchor"]
 
-texture = ExtResource( 1 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+position = Vector2( 7.74872, 4.7569 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 
 [node name="text" type="RichTextLabel" parent="anchor"]
 
@@ -62,12 +71,16 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -159.0
+margin_top = -94.0
+margin_right = 209.0
+margin_bottom = 106.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/italics_font = ExtResource( 2 )
-custom_fonts/normal_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_constants/line_separation = -5
@@ -76,6 +89,7 @@ bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
 override_selected_font_color = false
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="avatars" type="Node2D" parent="anchor"]
 
@@ -86,25 +100,25 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="avatar_old_man" type="Sprite" parent="anchor/avatars"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="avatar_panda" type="Sprite" parent="anchor/avatars"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="avatar_chameleon" type="Sprite" parent="anchor/avatars"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="avatar_god" type="Sprite" parent="anchor/avatars"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 

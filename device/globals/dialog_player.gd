@@ -10,6 +10,7 @@ func say(params, callback):
 		type = params[2]
 	type = type + ProjectSettings.get("platform/dialog_type_suffix")
 	var inst = get_resource(type).instance()
+	prints("INST", type, inst)
 	var z = inst.get_z()
 	get_tree().get_root().get_child(0).add_child(inst)
 	var intro = true

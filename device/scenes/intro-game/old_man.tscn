@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scenes/intro-game/sprites/panda_old.png" type="Texture" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/panda_old_1.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/panda_old_2.png" type="Texture" id=3]
+[ext_resource path="res://globals/item.gd" type="Script" id=1]
+[ext_resource path="res://scenes/intro-game/sprites/panda_old.png" type="Texture" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/panda_old_1.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/panda_old_2.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -52,13 +53,33 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
 [node name="old_man" type="Node2D"]
+
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "The panda master"
+action = ""
+events_path = "res://scenes/intro-game/old_man.esc"
+global_id = "old_man"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="area" type="TextureButton" parent="."]
 

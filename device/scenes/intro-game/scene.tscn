@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sprites/decor-background.jpg" type="Texture" id=2]
 [ext_resource path="res://globals/background.gd" type="Script" id=3]
 [ext_resource path="res://scenes/intro-game/bad_bamboo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://globals/item.gd" type="Script" id=5]
-[ext_resource path="res://scenes/intro-game/good_bamboo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/intro-game/old_man.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-left.png" type="Texture" id=8]
-[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-right.png" type="Texture" id=9]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/intro-game/good_bamboo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/intro-game/old_man.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-left.png" type="Texture" id=7]
+[ext_resource path="res://scenes/intro-game/sprites/decor-foreground-right.png" type="Texture" id=8]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=9]
 
 [node name="scene" type="Node2D"]
 
@@ -41,81 +40,39 @@ action = "walk"
 
 position = Vector2( 1121.21, 884.903 )
 z = 884
-script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
 tooltip = "A bamboo stick"
-action = ""
 events_path = "res://scenes/intro-game/bad_bamboo.esc"
 global_id = "bad_bamboo"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
-use_custom_z = false
 
-[node name="good_bamboo" parent="." instance=ExtResource( 6 )]
+[node name="good_bamboo" parent="." instance=ExtResource( 5 )]
 
 position = Vector2( 1347.53, 897.092 )
 z = 897
-script = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
 tooltip = "A bamboo stick"
-action = ""
 events_path = "res://scenes/intro-game/good_bamboo.esc"
 global_id = "good_bamboo"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
-use_custom_z = false
 
-[node name="old_man" parent="." instance=ExtResource( 7 )]
+[node name="old_man" parent="." instance=ExtResource( 6 )]
 
 position = Vector2( 383.883, 617.274 )
 scale = Vector2( 0.7, 0.7 )
-script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = ""
-action = ""
-events_path = ""
-global_id = ""
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
-use_custom_z = false
 
 [node name="foreground left" type="Sprite" parent="."]
 
 position = Vector2( 170, 540 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
@@ -124,12 +81,12 @@ __meta__ = {
 [node name="foreground right" type="Sprite" parent="."]
 
 position = Vector2( 1642, 540 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Offset", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="game" parent="." instance=ExtResource( 10 )]
+[node name="game" parent="." instance=ExtResource( 9 )]
 
 

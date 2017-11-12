@@ -190,26 +190,10 @@ use_custom_z = false
 
 position = Vector2( 1039.61, 841.002 )
 z = 841
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Z" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
 tooltip = "Bad bamboo 2"
-action = ""
-events_path = "res://scenes/second_scene/bad_bamboo_2.esc"
-global_id = "bad_bamboo_2"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
-use_custom_z = false
 
 [node name="good_bamboo_2" parent="." instance=ExtResource( 11 )]
 
@@ -235,25 +219,12 @@ use_custom_z = false
 
 [node name="good_bamboo_3" parent="." instance=ExtResource( 12 )]
 
-script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
 tooltip = "Good bamboo 3"
-action = ""
 events_path = "res://scenes/second_scene/good_bamboo_3.esc"
 global_id = "good_bamboo_3"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
-use_custom_z = false
 
 [node name="bamboo_god_2" parent="." instance=ExtResource( 13 )]
 
@@ -313,22 +284,7 @@ __meta__ = {
 
 position = Vector2( 1752.96, 675.222 )
 z = 3000
-script = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Z" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "A little cameleon"
-action = ""
-events_path = "res://scenes/second_scene/chameleon.esc"
-global_id = "chameleon"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
