@@ -207,6 +207,9 @@ placeholders = {
 
 [node name="good_bamboo_3" parent="." instance=ExtResource( 12 )]
 
+position = Vector2( 472.343, 663.334 )
+z = 663
+_sections_unfolded = [ "Transform", "Z" ]
 tooltip = "Good bamboo 3"
 placeholders = {
 
