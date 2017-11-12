@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/panda_old.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/panda_old_1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/panda_old_2.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/click_mask/old_man_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/panda_old.png" type="Texture" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/panda_old_1.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/panda_old_2.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -53,7 +54,7 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -87,6 +88,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -320.0
+margin_top = -391.0
+margin_right = 320.0
+margin_bottom = 390.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -96,7 +101,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-_sections_unfolded = [ "Textures" ]
+texture_click_mask = ExtResource( 2 )
+_sections_unfolded = [ "Margin", "Textures" ]
 
 [node name="animation" type="AnimationPlayer" parent="."]
 

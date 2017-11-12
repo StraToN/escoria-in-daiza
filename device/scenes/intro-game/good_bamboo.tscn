@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="AudioStream" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/good-bamboo.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/good-bamboo-hover.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/click_mask/bad_bamboo_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="AudioStream" id=3]
+[ext_resource path="res://scenes/intro-game/sprites/good-bamboo.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sprites/good-bamboo-hover.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -50,6 +51,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -34.0
+margin_top = -480.0
+margin_right = 307.0
+margin_bottom = 34.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -59,10 +64,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_click_mask = ExtResource( 2 )
+_sections_unfolded = [ "Margin", "Textures" ]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
@@ -84,14 +91,14 @@ autoplay = ""
 [node name="_focus_out" type="Sprite" parent="."]
 
 position = Vector2( 136.288, -222.715 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="_focus_in" type="Sprite" parent="."]
 
 visible = false
 position = Vector2( 136.288, -222.715 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Z" ]
 
 
