@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/second_scene/sprites/cameleon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/second_scene/sprites/click_mask/cameleon_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/second_scene/sprites/cameleon.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -40,6 +41,7 @@ tracks/0/keys = {
 [node name="chameleon" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 animations = null
 speed = 300
 scale_on_map = false
@@ -65,6 +67,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = -68.0
+margin_top = -101.0
+margin_right = 68.0
+margin_bottom = 99.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -74,6 +80,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
+texture_click_mask = ExtResource( 2 )
+_sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -89,6 +97,8 @@ autoplay = ""
 
 [node name="_focus_out" type="Sprite" parent="."]
 
-texture = ExtResource( 2 )
+position = Vector2( 0.598524, -0.374741 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 
