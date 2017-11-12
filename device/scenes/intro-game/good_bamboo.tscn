@@ -29,10 +29,10 @@ animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
-tooltip = ""
+tooltip = "A bamboo stick"
 action = ""
-events_path = ""
-global_id = ""
+events_path = "res://scenes/intro-game/good_bamboo.esc"
+global_id = "good_bamboo"
 use_combine = false
 inventory = false
 use_action_menu = true
@@ -83,10 +83,15 @@ autoplay = ""
 
 [node name="_focus_out" type="Sprite" parent="."]
 
+position = Vector2( 136.288, -222.715 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="_focus_in" type="Sprite" parent="."]
 
+visible = false
+position = Vector2( 136.288, -222.715 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
 
 

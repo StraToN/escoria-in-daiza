@@ -41,9 +41,6 @@ action = "walk"
 position = Vector2( 1121.21, 884.903 )
 z = 884
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
-tooltip = "A bamboo stick"
-events_path = "res://scenes/intro-game/bad_bamboo.esc"
-global_id = "bad_bamboo"
 placeholders = {
 
 }
@@ -53,9 +50,6 @@ placeholders = {
 position = Vector2( 1347.53, 897.092 )
 z = 897
 _sections_unfolded = [ "Transform", "Z" ]
-tooltip = "A bamboo stick"
-events_path = "res://scenes/intro-game/good_bamboo.esc"
-global_id = "good_bamboo"
 placeholders = {
 
 }

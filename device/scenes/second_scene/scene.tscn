@@ -197,31 +197,17 @@ placeholders = {
 
 [node name="good_bamboo_2" parent="." instance=ExtResource( 11 )]
 
-script = ExtResource( 6 )
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
+position = Vector2( 1665.72, 865.303 )
+z = 865
+_sections_unfolded = [ "Transform", "Z" ]
 tooltip = "Good bamboo 2"
-action = ""
-events_path = "res://scenes/second_scene/good_bamboo_2.esc"
-global_id = "good_bamboo_2"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
 placeholders = {
 
 }
-use_custom_z = false
 
 [node name="good_bamboo_3" parent="." instance=ExtResource( 12 )]
 
 tooltip = "Good bamboo 3"
-events_path = "res://scenes/second_scene/good_bamboo_3.esc"
-global_id = "good_bamboo_3"
 placeholders = {
 
 }

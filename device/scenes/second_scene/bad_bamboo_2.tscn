@@ -92,8 +92,14 @@ _sections_unfolded = [ "playback" ]
 
 [node name="_focus_out" type="Sprite" parent="."]
 
+position = Vector2( 12.0016, -102.188 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="_focus_in" type="Sprite" parent="."]
+
+visible = false
+position = Vector2( 22.8846, -246.388 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 
