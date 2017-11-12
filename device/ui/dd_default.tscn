@@ -42,7 +42,7 @@ length = 0.75
 loop = false
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("anchor:transform/scale")
+tracks/0/path = NodePath("anchor:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 0 ), Vector2( 1, 1.1 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:visibility/visible")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -64,7 +64,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("anchor:visibility/visible")
+tracks/2/path = NodePath("anchor:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
