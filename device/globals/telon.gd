@@ -20,10 +20,10 @@ func set_input_catch(p_catch):
 	return
 	var anim = get_node("animation")
 	if p_catch:
-		#anim.play("catch_input")
+		anim.play("catch_input")
 		set_process_input(true)
 	else:
-		#anim.play("release_input")
+		anim.play("release_input")
 		set_process_input(false)
 	catching_input = p_catch
 
@@ -120,7 +120,7 @@ func rand_seek(p_node = null):
 func _ready():
 	get_node("input_catch").connect("gui_input", self, "input_event")
 	get_node("input_catch").set_size(Vector2(ProjectSettings.get("display/game_width"), ProjectSettings.get("display/game_height")))
-	#get_node("animation").play("release_input")
+	get_node("animation").play("release_input")
 	add_to_group("game")
 
 	call_deferred("setup_vm")
