@@ -43,6 +43,5 @@ volume_db = 0.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-_sections_unfolded = [ "Pause" ]
 
 
