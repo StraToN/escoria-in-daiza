@@ -56,7 +56,6 @@ fixed_pos = true
 
 [node name="anchor" type="Node2D" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -322.438, 28.8088 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
