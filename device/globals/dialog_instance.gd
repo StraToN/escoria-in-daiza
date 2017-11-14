@@ -160,7 +160,7 @@ func setup_speech(tid):
 	player.set_name("speech_player")
 	add_child(player)
 	player.set_stream(speech_stream)
-	player.set_volume(vm.settings.voice_volume * ProjectSettings.get("application/max_voice_volume"))
+	player.set_volume_db(vm.settings.voice_volume * ProjectSettings.get("application/max_voice_volume"))
 	player.play()
 
 	if !player.is_playing():
