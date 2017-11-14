@@ -48,7 +48,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
 script = ExtResource( 3 )
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 action = "walk"
 
 [node name="terrain" type="Navigation2D" parent="."]
@@ -222,29 +222,17 @@ placeholders = {
 
 [node name="bamboo_god_2" parent="." instance=ExtResource( 15 )]
 
-modulate = Color( 1, 1, 1, 0 )
+visible = false
 position = Vector2( 984.846, 590.185 )
 z = 590
-script = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Bamboo god 2"
-action = ""
+tooltip = "The almighty Panda God"
 events_path = "res://scenes/second_scene/bamboo_god_2.esc"
 global_id = "bamboo_god_2"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
+interact_angle = 90
 placeholders = {
 
 }
-use_custom_z = false
 
 [node name="player" parent="." instance=ExtResource( 16 )]
 
