@@ -6,27 +6,27 @@
 [ext_resource path="res://scenes/intro-game/sprites/yes-no-button.png" type="Texture" id=4]
 [ext_resource path="res://scenes/intro-game/sprites/yes-no-button-pressed.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=1]
 
 font_path = "res://scenes/intro-game/font/Big_Bottom_Cartoon_AD.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 2 )
-_sections_unfolded = [ "Extra Spacing", "Settings" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 30
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 2 )
+font_data = SubResource( 1 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
@@ -43,7 +43,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 length = 1.0
 loop = false
@@ -62,7 +62,6 @@ tracks/0/keys = {
 
 [node name="confirm_popup" type="Control"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -164,7 +163,7 @@ rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_YES"
@@ -216,7 +215,7 @@ rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_NO"
@@ -232,8 +231,8 @@ _sections_unfolded = [ "Margin", "Rect", "Size Flags", "Visibility", "custom_col
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/close = SubResource( 5 )
-anims/open = SubResource( 6 )
+anims/close = SubResource( 4 )
+anims/open = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

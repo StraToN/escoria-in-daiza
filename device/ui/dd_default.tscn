@@ -81,17 +81,17 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 221.0
-margin_top = 180.0
-margin_right = 260.0
-margin_bottom = 15.0
+margin_left = -70.0
+margin_top = -117.0
+margin_right = -31.0
+margin_bottom = -117.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility" ]
 __meta__ = {
 "__editor_plugin_screen__": "2D"
 }
@@ -102,9 +102,7 @@ mouse_exit_shadow_color = Color( 0, 0, 0, 1 )
 
 [node name="anchor" type="Node2D" parent="."]
 
-visible = false
 position = Vector2( 1055.81, 602.209 )
-scale = Vector2( 1, 1e-05 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="bg" type="TextureRect" parent="anchor"]
@@ -208,12 +206,13 @@ margin_left = 379.0
 margin_top = 278.0
 margin_right = 1149.0
 margin_bottom = 307.0
+rect_min_size = Vector2( 700, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
 [node name="button" type="TextureButton" parent="item"]
 
@@ -245,7 +244,8 @@ anchor_bottom = 0.0
 margin_left = 3.0
 margin_top = 11.0
 margin_right = 719.0
-margin_bottom = 51.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 700, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

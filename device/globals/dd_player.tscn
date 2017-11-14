@@ -5,7 +5,7 @@
 
 [node name="dd_player" type="ResourcePreloader"]
 
-resources = [ PoolStringArray( "dialog_default" ), [ ExtResource( 1 ) ] ]
+resources = [ PoolStringArray( "default" ), [ ExtResource( 1 ) ] ]
 script = ExtResource( 2 )
 __meta__ = {
 "__editor_plugin_screen__": "3D"
