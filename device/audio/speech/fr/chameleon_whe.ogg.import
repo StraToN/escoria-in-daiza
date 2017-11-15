@@ -1,0 +1,10 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chameleon_whe.ogg-400cd75e0c6889ac989e4d5ad6ca3f49.oggstr"
+
+[params]
+
+loop=true
+loop_offset=0
