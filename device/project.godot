@@ -14,7 +14,7 @@ config/name="Escoria in Daiza"
 run/main_scene="res://globals/scene_main.tscn"
 max_voice_volume=2
 save_data="res://globals/save_data.gd"
-speech_suffix=".ogg"
+speech_suffix=".spx"
 tooltip_lang_default="en"
 main_scene="res://globals/scene_main.tscn"
 

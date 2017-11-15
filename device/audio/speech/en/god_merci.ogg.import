@@ -1,0 +1,10 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/god_merci.ogg-cc440b8bdfad0288e42a8e274e35a433.oggstr"
+
+[params]
+
+loop=true
+loop_offset=0
