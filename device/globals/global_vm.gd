@@ -657,7 +657,8 @@ func focus_out():
 func focus_in():
 	#AudioServer.set_stream_global_volume_scale(1)
 	AudioServer.set_bus_volume_db(0, 1)
-	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)
+	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)		
+
 	#if !focus_pause:
 	#	set_pause(false)
 
