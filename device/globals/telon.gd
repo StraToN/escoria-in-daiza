@@ -9,7 +9,11 @@ export var music_volume = 1.0
 func set_input_catch(p_catch):
 	if catching_input == p_catch:
 		return
-	get_node("input_catch").set_ignore_mouse(!p_catch)
+	#get_node("input_catch").set_ignore_mouse(!p_catch)
+	if p_catch:
+		get_node("input_catch").set_mouse_filter(Control.MOUSE_FILTER_PASS)
+	else:
+		get_node("input_catch").set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 	catching_input = p_catch
 	set_process_input(p_catch)
 
@@ -25,18 +29,19 @@ func set_input_catch(p_catch):
 
 func _input(event):
 	if event.is_pressed() && event.is_action("ui_accept"):
-		get_tree().call_group(0, "events", "skipped")
+		get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "events", "skipped")
 
 func input_event(event):
-	if event.type == InputEvent.MOUSE_BUTTON && event.pressed && event.button_index == BUTTON_LEFT:
-		get_tree().call_group(0, "events", "skipped")
+	if event is InputEventMouseButton && event.pressed && event.button_index == BUTTON_LEFT:
+		get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "events", "skipped")
 
 func game_cleared():
 	if global_id != "":
 		vm.register_object(global_id, self)
 
 func set_volume(p_vol):
-	AS.set_stream_global_volume_scale(p_vol)
+	# TODO manage multiple buses
+	AudioServer.set_bus_volume_db(0, p_vol)
 
 func _process(time):
 	set_volume(music_volume)
@@ -99,13 +104,13 @@ func rand_seek(p_node = null):
 	#node.play()
 	#return
 
-	var len = node.get_length()
-	printt("length is ", len)
-	if len == 0:
+	var length = node.get_length()
+	printt("length is ", length)
+	if length == 0:
 		return
 
 	var r = randf()
-	var pos = len * r
+	var pos = length * r
 	printt("seek to ", pos, r)
 
 	node.seek_pos(pos)
@@ -113,9 +118,8 @@ func rand_seek(p_node = null):
 		node.play()
 
 func _ready():
-	#._ready()
-	get_node("input_catch").connect("input_event", self, "input_event")
-	get_node("input_catch").set_size(Vector2(Globals.get("display/game_width"), Globals.get("display/game_height")))
+	get_node("input_catch").connect("gui_input", self, "input_event")
+	get_node("input_catch").set_size(Vector2(ProjectSettings.get("display/game_width"), ProjectSettings.get("display/game_height")))
 	get_node("animation").play("release_input")
 	add_to_group("game")
 

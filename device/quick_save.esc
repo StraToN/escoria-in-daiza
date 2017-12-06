@@ -1,7 +1,16 @@
 :load
+
 cut_scene telon fade_out
-set_global i/inv_tv true
-set_state planta default
-change_scene res://scenes/test/baldio.scn
-teleport_pos player 821.737122 587.023682
+
+## Global flags
+
+
+## Objects
+
+
+## Player
+
+change_scene res://scenes/second_scene/scene.tscn
+teleport_pos player 625 604
+
 cut_scene telon fade_in

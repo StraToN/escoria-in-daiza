@@ -22,7 +22,6 @@ var game_size
 var compiler
 var level
 
-var root
 var res_cache
 
 var cam_target = null
@@ -72,7 +71,7 @@ func load_settings():
 	save_data.load_settings([self, "settings_loaded"])
 
 func settings_loaded(p_settings):
-	printt("******* settings loaded")
+	printt("******* settings loaded", p_settings)
 	settings_default.text_lang = OS.get_locale().substr(0, 2)
 	if p_settings != null:
 		settings = p_settings
@@ -83,13 +82,16 @@ func settings_loaded(p_settings):
 		if !(k in settings):
 			settings[k] = settings_default[k]
 
-	AudioServer.set_fx_global_volume_scale(settings.sfx_volume)
+	# TODO Apply globally
+#	AudioServer.set_fx_global_volume_scale(settings.sfx_volume)
+	AudioServer.set_bus_volume_db(0, settings.sfx_volume)
 	TranslationServer.set_locale(settings.text_lang)
 	music_volume_changed()
 	update_window_fullscreen(true)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "ui", "language_changed")
 
 func update_window_fullscreen(p_force = false):
-	if Globals.get("debug/screen_size_override"):
+	if ProjectSettings.get("debug/screen_size_override"):
 		return
 	if !p_force && (settings.fullscreen == OS.is_window_fullscreen()):
 		return
@@ -98,7 +100,7 @@ func update_window_fullscreen(p_force = false):
 		OS.set_window_fullscreen(settings.fullscreen)
 		pass
 	else:
-		var title = Globals.get("platform/window_title_height")
+		var title = ProjectSettings.get("platform/window_title_height")
 		var sc = OS.get_current_screen()
 		var ratio = 1080 / 1920.0
 		var size = OS.get_screen_size(sc)
@@ -113,7 +115,7 @@ func update_window_fullscreen(p_force = false):
 		OS.set_window_fullscreen(settings.fullscreen)
 		OS.set_window_size(size)
 		#OS.set_window_position(Vector2(0, 0))
-		OS.set_window_resizable(Globals.get("platform/screen_resizable"))
+		OS.set_window_resizable(ProjectSettings.get("platform/screen_resizable"))
 
 func music_volume_changed():
 	emit_signal("music_volume_changed")
@@ -128,11 +130,11 @@ func drag_end():
 		printt("********** dragging ends")
 		if hover_object != null && !hover_object.inventory:
 			printt("calling clicked")
-			get_tree().call_group(0, "game", "clicked", hover_object, hover_object.get_pos())
-			get_tree().call_group(0, "game", "clear_pending_command")
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", hover_object, hover_object.get_position())
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clear_pending_command")
 		elif hover_object == null:
-			get_tree().call_group(0, "game", "clear_pending_command")
-			get_tree().call_group(0, "hud", "set_tooltip", "")
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clear_pending_command")
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", "")
 
 	drag_object = null
 
@@ -162,13 +164,13 @@ func update_camera(time):
 			var obj = get_object(n)
 			if obj != null:
 				count += 1
-				pos += obj.get_pos()
+				pos += obj.get_position()
 		if count > 0:
 			pos = pos / count
 	else:
-		pos = target.get_pos()
+		pos = target.get_position()
 
-	var cpos = camera.get_pos()
+	var cpos = camera.get_position()
 
 	if cpos != pos:
 		#return
@@ -176,16 +178,16 @@ func update_camera(time):
 		var dif = pos - cpos
 		var dist = cam_speed * time
 		if dist > dif.length() || cam_speed == 0:
-			camera.set_pos(pos)
+			camera.set_position(pos)
 			#return
 		else:
-			camera.set_pos(cpos + dif.normalized() * dist)
+			camera.set_position(cpos + dif.normalized() * dist)
 			pos = cpos + dif.normalized() * dist
 
-	if Globals.get("platform/use_custom_camera"):
+	if ProjectSettings.get("platform/use_custom_camera"):
 		var half = game_size / 2
 		pos = _adjust_camera(pos)
-		var t = Matrix32()
+		var t = Transform2D()
 		t[2] = (-(pos - half))
 
 		get_node("/root").set_canvas_transform(t)
@@ -193,15 +195,15 @@ func update_camera(time):
 func _adjust_camera(pos):
 	var half = game_size / 2
 
-	if pos.x + half.x > camera_limits.pos.x + camera_limits.size.x:
-		pos.x = (camera_limits.pos.x + camera_limits.size.x) - half.x
-	if pos.x - half.x < camera_limits.pos.x:
-		pos.x = camera_limits.pos.x + half.x
+	if pos.x + half.x > camera_limits.position.x + camera_limits.size.x:
+		pos.x = (camera_limits.position.x + camera_limits.size.x) - half.x
+	if pos.x - half.x < camera_limits.position.x:
+		pos.x = camera_limits.position.x + half.x
 
-	if pos.y + half.y > camera_limits.pos.y + camera_limits.size.y:
-		pos.y = (camera_limits.pos.y + camera_limits.size.y) - half.y
-	if pos.y - half.y < camera_limits.pos.y:
-		pos.y = camera_limits.pos.y + half.y
+	if pos.y + half.y > camera_limits.position.y + camera_limits.size.y:
+		pos.y = (camera_limits.position.y + camera_limits.size.y) - half.y
+	if pos.y - half.y < camera_limits.position.y:
+		pos.y = camera_limits.position.y + half.y
 
 	return pos
 
@@ -219,17 +221,17 @@ func inventory_set(p_obj, p_has):
 	set_global("i/"+p_obj, p_has)
 
 func say(params, level):
-	get_tree().call_group(0, "dialog", "say", params, level)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "dialog", "say", params, level)
 
 func dialog_config(params):
-	get_tree().call_group(0, "dialog", "config", params)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "dialog", "config", params)
 
 func wait(params, level):
 	var time = float(params[0])
 	printt("wait time ", params[0], time)
 	if time <= 0:
 		return state_return
-	get_tree().call_group(0, "game", "wait", time, level)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "wait", time, level)
 	level.waiting = true
 	return state_yield
 
@@ -254,7 +256,7 @@ func test(cmd):
 	return true
 
 func dialog(params, level):
-	get_tree().call_group(0, "dialog_dialog", "start", params, level)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "dialog_dialog", "start", params, level)
 
 func instance_level(p_level, p_root):
 	var level = { "ip": 0, "instructions": p_level, "waiting": false, "break_stop": p_root, "labels": {} }
@@ -296,7 +298,7 @@ func report_errors(p_path, errors):
 		text += e+"\n"
 	#dialog.set_text(text)
 	print("error is ", text)
-	#root.get_node("layers/telon").add_child(dialog)
+	#main.get_node("layers/telon").add_child(dialog)
 
 func add_level(p_level, p_root):
 	stack.push_back(instance_level(p_level, p_root))
@@ -306,8 +308,8 @@ func add_level(p_level, p_root):
 	#return ret
 
 func run_event(p_event):
-	root.set_input_catch(true)
-	get_tree().call_group(0, "hud", "set_tooltip", "")
+	main.set_input_catch(true)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", "")
 	add_level(p_event, true)
 
 func sched_event(time, obj, event):
@@ -328,7 +330,7 @@ func set_globals(pat, val):
 			emit_signal("global_changed", key)
 
 func get_global_list():
-	return globals.keys()
+	return ProjectSettings.keys()
 
 func get_object(name):
 	if !(name in objects):
@@ -343,7 +345,7 @@ func register_object(name, val):
 		val.set_state("default")
 	if name in actives:
 		val.set_active(actives[name])
-	val.connect("exit_tree", self, "object_exit_scene", [name])
+	val.connect("tree_exited", self, "object_exit_scene", [name])
 
 func get_registered_objects():
 	return objects
@@ -413,7 +415,7 @@ func run():
 			while stack.size() > 0 && !(stack[stack.size()-1].break_stop):
 				stack.remove(stack.size()-1)
 			stack.remove(stack.size()-1)
-	root.set_input_catch(false)
+	main.set_input_catch(false)
 	loading_game = false
 
 func can_save():
@@ -433,14 +435,14 @@ func change_scene(params, context):
 	printt("change scene to ", params[0])
 	#var res = ResourceLoader.load(params[0])
 	check_cache()
-	root.clear_scene()
+	main.clear_scene()
 	camera = null
 	event_queue = []
 	var res = res_cache.get_resource(params[0])
 	res_cache.clear()
 	var scene = res.instance()
 	if scene:
-		root.set_scene(scene)
+		main.set_scene(scene)
 	else:
 		report_errors("", ["Failed loading scene "+params[0]+" for change_scene"])
 
@@ -453,10 +455,10 @@ func change_scene(params, context):
 func swap_scene(p_path):
 
 	var res = res_cache.get_resource(p_path)
-	root.clear_scene()
+	main.clear_scene()
 	var scene = res.instance()
 	if scene:
-		root.set_scene(scene)
+		main.set_scene(scene)
 	else:
 		report_errors("", ["Failed loading scene "+p_path+" for swap_scene"])
 
@@ -464,14 +466,14 @@ func spawn(params):
 	var res = ResourceLoader.load(params[0])
 	var scene = res.instance()
 	if scene:
-		root.get_tree().add_child(scene)
+		main.get_tree().add_child(scene)
 	else:
 		report_errors("", ["Failed loading scene "+params[0]+" for spawn"])
 		return state_return
 	if params.size() > 1:
 		var obj = get_object(params[1])
 		if obj:
-			scene.set_pos(obj.get_global_pos());
+			scene.set_position(obj.get_global_position());
 		else:
 			report_errors("", ["Global id "+params[1]+" not found for spawn"])
 	return state_return
@@ -485,19 +487,19 @@ func set_pause(p_pause):
 	emit_signal("paused", p_pause)
 
 func is_game_active():
-	return root.get_current_scene() != null && (root.get_current_scene() extends preload("res://globals/scene.gd"))
+	return main.get_current_scene() != null && (main.get_current_scene() is preload("res://globals/scene.gd"))
 
 func check_autosave():
 	if get_global("save_disabled"):
 		return
-	if root.get_current_scene() == null || !(root.get_current_scene() extends preload("res://globals/scene.gd")):
+	if main.get_current_scene() == null || !(main.get_current_scene() is preload("res://globals/scene.gd")):
 		return
 	var time = OS.get_ticks_msec()
 	if autosave_pending || (time - last_autosave) > AUTOSAVE_TIME_MS:
 		autosave_pending = true
 		var data = save()
-		if data == false:
-			return
+		if typeof(data) == TYPE_BOOL && data == false:
+				return
 		autosave_pending = false
 		save_data.autosave(data, [self, "autosave_done"])
 
@@ -521,7 +523,7 @@ func load_file(p_game):
 	clear()
 	loading_game = true
 	run_event(game["load"])
-	root.menu_collapse()
+	main.menu_collapse()
 
 func load_slot(p_game):
 	var cb = [self, "game_str_loaded"]
@@ -539,7 +541,7 @@ func game_str_loaded(p_data = null):
 	clear()
 	loading_game = true
 	run_event(game["load"])
-	root.menu_collapse()
+	main.menu_collapse()
 
 func save():
 	if stack.size() != 0:
@@ -581,24 +583,24 @@ func save():
 	#	if k == "player" || objects[k] == null:
 	#		continue
 	#	if objects[k].moved:
-	#		var pos = objects[k].get_pos()
+	#		var pos = objects[k].get_position()
 	#		ret.append("teleport_pos " + k + " " + str(int(pos.x)) + " " + str(int(pos.y)) + "\n")
 
 	ret.append("\n")
 	ret.append("## Player\n\n")
 
-	ret.append("change_scene " + root.get_current_scene().get_filename() + "\n")
+	ret.append("change_scene " + main.get_current_scene().get_filename() + "\n")
 
-	if root.get_current_scene().has_node("player"):
-		var pos = root.get_current_scene().get_node("player").get_global_pos()
+	if main.get_current_scene().has_node("player"):
+		var pos = main.get_current_scene().get_node("player").get_global_position()
 		ret.append("teleport_pos player " + str(pos.x) + " " + str(pos.y) + "\n")
 
 	if cam_target != null:
 		ret.append("\n")
 		ret.append("## Camera\n\n")
 		if typeof(cam_target) == typeof(Vector2()):
-			#ret.append("camera_set_pos " + str(cam_speed) + " " + str(int(cam_target.x)) + " " + str(int(cam_target.y)) + "\n")
-			ret.append("camera_set_pos 0 " + str(int(cam_target.x)) + " " + str(int(cam_target.y)) + "\n")
+			#ret.append("camera_set_position " + str(cam_speed) + " " + str(int(cam_target.x)) + " " + str(int(cam_target.y)) + "\n")
+			ret.append("camera_set_position 0 " + str(int(cam_target.x)) + " " + str(int(cam_target.y)) + "\n")
 		else:
 			var tlist = ""
 
@@ -623,11 +625,11 @@ func save():
 
 func set_camera(p_cam):
 	camera = p_cam
-	if Globals.get("platform/use_custom_camera"):
+	if ProjectSettings.get("platform/use_custom_camera"):
 		camera.clear_current()
 
 func clear():
-	get_tree().call_group(0, "game", "game_cleared")
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "game_cleared")
 	stack = []
 	globals = {}
 	objects = {}
@@ -642,22 +644,21 @@ func game_over(p_enable_continue, p_show_credits, context):
 	continue_enabled = p_enable_continue
 	change_scene(["res://globals/scene_main.tscn"], context)
 	if p_show_credits:
-		root.get_current_scene().show_credits()
+		main.get_current_scene().show_credits()
 
 func focus_out():
-	AudioServer.set_fx_global_volume_scale(0)
-	AudioServer.set_stream_global_volume_scale(0)
+	#AudioServer.set_fx_global_volume_scale(0)
+	AudioServer.set_bus_volume_db(0, 0)
+	#AudioServer.set_stream_global_volume_scale(0)
 	focus_pause = get_tree().is_paused()
 	#if !focus_pause:
 	#	set_pause(true)
 
 func focus_in():
-	AudioServer.set_stream_global_volume_scale(1)
-	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)
-	# workaround becaus settings.sfx_volume is not defined
-	AudioServer.set_fx_global_volume_scale(1)
-	
-		
+	#AudioServer.set_stream_global_volume_scale(1)
+	AudioServer.set_bus_volume_db(0, 1)
+	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)		
+
 	#if !focus_pause:
 	#	set_pause(false)
 
@@ -671,9 +672,9 @@ func _notification(what):
 		quit_request()
 
 func quit_request():
-	#if root.menu_stack.size() > 0 && (root.menu_stack[root.menu_stack.size()-1] extends preload("res://game/ui/confirmation_popup.gd")):
+	#if main.menu_stack.size() > 0 && (main.menu_stack[main.menu_stack.size()-1] is preload("res://game/ui/confirmation_popup.gd")):
 	#	return
-	#var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.scn")
+	#var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.tscn")
 	#ConfPopup.PopupConfirmation("KEY_QUIT_GAME",self,"","_quit_game")
 	pass
 
@@ -696,7 +697,7 @@ func check_achievement(name):
 
 func show_rate(url):
 	rate_url = url
-	var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.scn")
+	var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.tscn")
 	ConfPopup.PopupConfirmation("rate2",self,"","_rate_game")
 	ConfPopup.set_buttons("rate3", "rate5")
 
@@ -704,12 +705,12 @@ func _rate_game():
 	OS.shell_open(rate_url)
 
 func get_hud_scene():
-	var hpath = "res://ui/hud.scn"
+	var hpath = "res://ui/hud.tscn"
 	return hpath
 
 func _ready():
 
-	save_data = load(Globals.get("application/save_data")).new()
+	save_data = load(ProjectSettings.get("application/save_data")).new()
 	save_data.start()
 
 	get_tree().set_auto_accept_quit(false)
@@ -729,20 +730,19 @@ func _ready():
 	level = preload("res://globals/vm_level.gd").new()
 	level.set_vm(self)
 	game_size = Vector2()
-	game_size.x = Globals.get("display/game_width")
-	game_size.y = Globals.get("display/game_height")
+	game_size.x = ProjectSettings.get("display/game_width")
+	game_size.y = ProjectSettings.get("display/game_height")
 
-	scenes_cache_list.push_back(Globals.get("platform/telon"))
+	scenes_cache_list.push_back(ProjectSettings.get("platform/telon"))
 	scenes_cache_list.push_back(get_hud_scene())
 
-	if !Globals.has("debug/skip_cache") || !Globals.get("debug/skip_cache"):
+	if !ProjectSettings.has_method("debug/skip_cache") || !ProjectSettings.get("debug/skip_cache"):
 		printt("cache list ", scenes_cache_list)
 		for s in scenes_cache_list:
 			print("s is ", s)
 			res_cache.queue_resource(s, false, true)
 
 	printt("********** vm calling get scene", get_tree(), get_tree().get_root())
-	root = get_node("/root/main")
 
 	achievements = preload("res://globals/achievements.gd").new()
 	achievements.start()

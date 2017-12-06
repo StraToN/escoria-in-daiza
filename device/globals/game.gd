@@ -1,4 +1,4 @@
-var vm
+extends Node
 
 var player
 var mode = "default"
@@ -39,7 +39,7 @@ func mouse_enter(obj):
 		text = text.replace("%1", tr(tt))
 	else:
 		text = tt
-	get_tree().call_group(0, "hud", "set_tooltip", text)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", text)
 	vm.hover_begin(obj)
 
 func mouse_exit(obj):
@@ -50,7 +50,7 @@ func mouse_exit(obj):
 		text = text.replace("%1", tr(current_tool.get_tooltip()))
 	else:
 		text = ""
-	get_tree().call_group(0, "hud", "set_tooltip", text)
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", text)
 	vm.hover_end()
 
 func clear_action():
@@ -66,6 +66,11 @@ func set_current_tool(p_tool):
 	current_tool = p_tool
 
 func clicked(obj, pos):
+	# If multiple areas are clicked at once, an item_background "wins"
+	if obj is Area2D:
+		for area in obj.get_overlapping_areas():
+			if area.has_method("is_clicked") and area.is_clicked():
+				return
 	joystick_mode = false
 	if !vm.can_interact():
 		return
@@ -81,7 +86,7 @@ func clicked(obj, pos):
 			if player == self:
 				return
 			player.walk_to(pos)
-			get_tree().call_group(0, "hud", "set_tooltip", "")
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", "")
 
 		elif obj.inventory:
 
@@ -99,7 +104,7 @@ func clicked(obj, pos):
 			if player == self:
 				return
 			player.walk_to(pos)
-			get_tree().call_group(0, "hud", "set_tooltip", "")
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", "")
 
 		elif obj.use_action_menu && action_menu != null:
 			spawn_action_menu(obj)
@@ -176,26 +181,26 @@ func fallback(obj, action, param = null):
 func scene_input(event):
 	if event.is_action("quick_save") && event.is_pressed() && !event.is_echo():
 		vm.request_autosave()
-	if event.type == InputEvent.JOYSTICK_MOTION:
+	if event is InputEventJoypadMotion:
 		if event.axis == 0 || event.axis == 1:
 			joystick_mode = true
 			check_joystick = true
 			set_process(true)
 
-	if event.type == InputEvent.MOUSE_BUTTON && !event.is_pressed() && event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton && !event.is_pressed() && event.button_index == BUTTON_LEFT:
 		if vm.drag_object != null:
 			vm.drag_end()
 
 
 	if event.is_action("menu_request") && event.is_pressed() && !event.is_echo():
 		if vm.can_save() && vm.can_interact() && vm.menu_enabled():
-			get_node("/root/main").load_menu(Globals.get("ui/main_menu"))
+			get_node("/root/main").load_menu(ProjectSettings.get("ui/main_menu"))
 		else:
-			#get_tree().call_group(0, "game", "ui_blocked")
+			#get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "ui_blocked")
 			if vm.menu_enabled():
-				get_node("/root/main").load_menu(Globals.get("ui/in_game_menu"))
+				get_node("/root/main").load_menu(ProjectSettings.get("ui/in_game_menu"))
 			else:
-				get_tree().call_group(0, "game", "ui_blocked")
+				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "ui_blocked")
 
 
 func _process(time):
@@ -265,16 +270,16 @@ func set_camera_limits():
 		var area = Rect2()
 		for i in range(0, p.get_child_count()):
 			var c = p.get_child(i)
-			if !(c extends preload("res://globals/background.gd")):
+			if !(c is preload("res://globals/background.gd")):
 				continue
-			var pos = c.get_global_pos()
+			var pos = c.get_global_position()
 			var size = c.get_size()
 			area = area.expand(pos)
 			area = area.expand(pos + size)
 
-		camera.set_limit(MARGIN_LEFT, area.pos.x)
-		camera.set_limit(MARGIN_RIGHT, area.pos.x + area.size.x)
-		var cam_top = area.pos.y # - get_node("/root/main").screen_ofs.y
+		camera.set_limit(MARGIN_LEFT, area.position.x)
+		camera.set_limit(MARGIN_RIGHT, area.position.x + area.size.x)
+		var cam_top = area.position.y # - get_node("/root/main").screen_ofs.y
 		camera.set_limit(MARGIN_TOP, cam_top)
 		camera.set_limit(MARGIN_BOTTOM, cam_top + area.size.y + get_node("/root/main").screen_ofs.y * 2)
 
@@ -309,16 +314,16 @@ func load_hud():
 
 func _ready():
 	add_to_group("game")
-	vm = get_tree().get_root().get_node("vm")
 	player = get_node("../player")
 	if has_node("action_menu"):
 		action_menu = get_node("action_menu")
 	if fallbacks_path != "":
 		fallbacks = vm.compile(fallbacks_path)
 
-	click = get_node("click")
-	click_anim = get_node("click_anim")
-	#set_process_input(true)
+	if has_node("click"):
+		click = get_node("click")
+	if has_node("click_anim"):
+		click_anim = get_node("click_anim")
 
 	camera = get_node("camera")
 

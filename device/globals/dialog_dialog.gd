@@ -5,7 +5,6 @@ export var mouse_enter_shadow_color = Color(0.6,0.4,0)
 export var mouse_exit_color = Color(1,1,1)
 export var mouse_exit_shadow_color = Color(1,1,1)
 
-var vm
 var cmd
 var container
 var context
@@ -36,7 +35,7 @@ func start(params, p_context):
 	context = p_context
 	cmd = params[0]
 	var i = 0
-	var visible = 0
+	var nb_visible = 0
 	for q in cmd:
 		if !vm.test(q):
 			i+=1
@@ -45,7 +44,7 @@ func start(params, p_context):
 		var but = it.get_node("button")
 		var label = but.get_node("label")
 
-		var force_ids = Globals.get("debug/force_text_ids")
+		var force_ids = ProjectSettings.get("debug/force_text_ids")
 		var text = q.params[0]
 		var sep = text.find(":\"")
 		if sep > 0:
@@ -63,10 +62,10 @@ func start(params, p_context):
 
 		label.set_text(text)
 		but.connect("pressed", self, "selected", [i])
-		but.connect("mouse_enter",self,"_on_mouse_enter",[but])
-		but.connect("mouse_exit",self,"_on_mouse_exit",[but])
+		but.connect("mouse_entered",self,"_on_mouse_enter",[but])
+		but.connect("mouse_exited",self,"_on_mouse_exit",[but])
 
-		var height_ratio = Globals.get("platform/dialog_option_height")
+		var height_ratio = ProjectSettings.get("platform/dialog_option_height")
 		var size = it.get_custom_minimum_size()
 		size.y = size.y * height_ratio
 		it.set_custom_minimum_size(size)
@@ -76,7 +75,7 @@ func start(params, p_context):
 		if i == 0:
 			but.grab_focus()
 		i+=1
-		visible += 1
+		nb_visible += 1
 
 		_on_mouse_exit(but)
 
@@ -132,7 +131,8 @@ func stop():
 func game_cleared():
 	queue_free()
 
-func anim_finished():
+func anim_finished(anim_name):
+	# TODO use parameter here?
 	var cur = animation.get_current_animation()
 	if cur == "show":
 		ready = true
@@ -140,8 +140,8 @@ func anim_finished():
 			timer.start()
 			if animation.has_animation("timer"):
 				animation.set_current_animation("timer")
-				var len = animation.get_current_animation_length()
-				animation.set_speed(len / timer_timeout)
+				var length = animation.get_current_animation_length()
+				animation.set_speed(length / timer_timeout)
 				animation.play()
 
 	if cur == "hide":
@@ -153,16 +153,15 @@ func _ready():
 
 	printt("dialog ready")
 	hide()
-	vm = get_tree().get_root().get_node("vm")
 	container = get_node("anchor/scroll/container")
-	container.set_stop_mouse(false)
+	container.set_mouse_filter(MOUSE_FILTER_PASS)
 	#add_to_group("dialog_dialog")
 	item = get_node("item")
-	item.get_node("button/label").set_stop_mouse(false)
-	item.get_node("button").set_stop_mouse(false)
-	item.set_stop_mouse(false)
+	item.get_node("button/label").set_mouse_filter(MOUSE_FILTER_PASS)
+	item.get_node("button").set_mouse_filter(MOUSE_FILTER_PASS)
+	item.set_mouse_filter(MOUSE_FILTER_PASS)
 	call_deferred("remove_child", item)
 	animation = get_node("animation")
-	animation.connect("finished", self, "anim_finished")
+	animation.connect("animation_finished", self, "anim_finished")
 	#get_node("anchor/scroll").set_theme(preload("res://game/globals/dialog_theme.xml"))
 	add_to_group("game")

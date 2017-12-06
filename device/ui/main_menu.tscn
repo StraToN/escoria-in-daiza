@@ -1,102 +1,120 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ui/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://ui/start-screen-escoria-in-daiza.png" type="Texture" id=2]
 [ext_resource path="res://scenes/intro-game/sprites/bg-button.png" type="Texture" id=3]
 [ext_resource path="res://scenes/intro-game/sprites/bg-button-pressed.png" type="Texture" id=4]
-[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://scenes/intro-game/font/Big_Bottom_Cartoon_AD.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/intro-game/sprites/lgge-button.png" type="Texture" id=6]
 [ext_resource path="res://scenes/intro-game/sprites/lgge-button-pressed.png" type="Texture" id=7]
 
+[sub_resource type="DynamicFont" id=1]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=2]
+
+font_path = "res://scenes/intro-game/font/Big_Bottom_Cartoon_AD.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 17
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 17
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 17
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+
 [node name="main_menu" type="Control"]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 3.0
-margin/right = 1930.0
-margin/bottom = 1104.0
-script/script = ExtResource( 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 960, 540 )
 texture = ExtResource( 2 )
-__meta__ = { "_edit_lock_":true }
-
-[node name="continue" type="TextureButton" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 188.0
-margin/top = 697.0
-margin/right = 749.0
-margin/bottom = 791.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-textures/hover = ExtResource( 4 )
-params/scale = Vector2( 0.3, 0.3 )
-
-[node name="UI_CONTINUE" type="Label" parent="continue"]
-
-rect/scale = Vector2( 3, 3 )
-hint/tooltip = "Continue the game"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 7.0
-margin/top = 9.0
-margin/right = 190.0
-margin/bottom = 39.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
-custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
-text = "UI_CONTINUE"
-align = 1
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+centered = false
+_sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="new_game" type="TextureButton" parent="."]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 87.0
-margin/top = 543.0
-margin/right = 652.0
-margin/bottom = 638.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 87.0
+margin_top = 543.0
+margin_right = 1954.0
+margin_bottom = 854.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-textures/hover = ExtResource( 4 )
-params/scale = Vector2( 0.3, 0.3 )
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Textures", "Visibility" ]
 
 [node name="UI_NEW_GAME" type="Label" parent="new_game"]
 
-rect/scale = Vector2( 3, 3 )
-hint/tooltip = "Start a new game"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 23.0
-margin/top = 5.0
-margin/right = 194.0
-margin/bottom = 35.0
-custom_fonts/font = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 27.0
+margin_top = -27.0
+margin_right = 639.0
+margin_bottom = 76.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_NEW_GAME"
@@ -105,38 +123,102 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="credits" type="TextureButton" parent="."]
+[node name="continue" type="TextureButton" parent="."]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 348.0
-margin/top = 845.0
-margin/right = 913.0
-margin/bottom = 940.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 188.0
+margin_top = 697.0
+margin_right = 2055.0
+margin_bottom = 1008.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-textures/hover = ExtResource( 4 )
-params/scale = Vector2( 0.3, 0.3 )
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures" ]
+
+[node name="UI_CONTINUE" type="Label" parent="continue"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = -15.0
+margin_right = 632.0
+margin_bottom = 88.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
+custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
+text = "UI_CONTINUE"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
+
+[node name="credits" type="TextureButton" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 348.0
+margin_top = 845.0
+margin_right = 2215.0
+margin_bottom = 1156.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="UI_CREDITS" type="Label" parent="credits"]
 
-rect/scale = Vector2( 3, 3 )
-hint/tooltip = "Start a new game"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 23.0
-margin/top = 5.0
-margin/right = 194.0
-margin/bottom = 35.0
-custom_fonts/font = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 27.0
+margin_top = -13.0
+margin_right = 639.0
+margin_bottom = 90.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_CREDITS"
@@ -145,38 +227,50 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
 [node name="exit" type="TextureButton" parent="."]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1312.0
-margin/top = 941.0
-margin/right = 1878.0
-margin/bottom = 1045.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1312.0
+margin_top = 941.0
+margin_right = 3179.0
+margin_bottom = 1252.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-textures/hover = ExtResource( 4 )
-params/scale = Vector2( 0.3, 0.3 )
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+_sections_unfolded = [ "Anchor", "Focus", "Margin", "Mouse", "Rect", "Textures", "Visibility" ]
 
 [node name="UI_QUIT" type="Label" parent="exit"]
 
-rect/scale = Vector2( 3, 3 )
-hint/tooltip = "Quit the game"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 18.0
-margin/top = 3.0
-margin/right = 196.0
-margin/bottom = 33.0
-custom_fonts/font = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = -22.0
+margin_right = 623.0
+margin_bottom = 81.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "UI_QUIT"
@@ -185,124 +279,163 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
 [node name="en" type="TextureButton" parent="."]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 966.0
-margin/top = 826.0
-margin/right = 1088.0
-margin/bottom = 943.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 966.0
+margin_top = 826.0
+margin_right = 1200.0
+margin_bottom = 1060.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
-textures/pressed = ExtResource( 7 )
-textures/hover = ExtResource( 7 )
-params/scale = Vector2( 0.5, 0.5 )
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="en" type="Label" parent="en"]
 
-rect/scale = Vector2( 1.6, 1.6 )
-hint/tooltip = "en"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 16.0
-margin/top = 32.0
-margin/right = 66.0
-margin/bottom = 68.0
-custom_fonts/font = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 62.0
+margin_top = 7.0
+margin_right = 96.0
+margin_bottom = 65.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "en"
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
 [node name="fr" type="TextureButton" parent="."]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1098.0
-margin/top = 768.0
-margin/right = 1215.0
-margin/bottom = 885.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1098.0
+margin_top = 768.0
+margin_right = 1332.0
+margin_bottom = 1002.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
-textures/pressed = ExtResource( 7 )
-textures/hover = ExtResource( 7 )
-params/scale = Vector2( 0.5, 0.5 )
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="fr" type="Label" parent="fr"]
 
-rect/scale = Vector2( 1.6, 1.6 )
-hint/tooltip = "fr"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 27.0
-margin/top = 34.0
-margin/right = 67.0
-margin/bottom = 64.0
-custom_fonts/font = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 28.0
+margin_top = 16.0
+margin_right = 85.0
+margin_bottom = 74.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "fr"
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
 [node name="es" type="TextureButton" parent="."]
 
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 1203.0
-margin/top = 688.0
-margin/right = 1322.0
-margin/bottom = 805.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1213.0
+margin_top = 685.0
+margin_right = 1447.0
+margin_bottom = 919.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
-textures/pressed = ExtResource( 7 )
-textures/hover = ExtResource( 7 )
-params/scale = Vector2( 0.5, 0.5 )
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="es" type="Label" parent="es"]
 
-rect/scale = Vector2( 1.6, 1.6 )
-hint/tooltip = "es"
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 27.0
-margin/top = 28.0
-margin/right = 67.0
-margin/bottom = 63.0
-custom_fonts/font = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 34.0
+margin_top = 9.0
+margin_right = 91.0
+margin_bottom = 67.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.988235, 0.913725, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.443137, 0.266667, 0.00784314, 1 )
 text = "es"
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts" ]
 
 [connection signal="pressed" from="en" to="." method="_on_language_selected" binds= [ "en" ]]
 
