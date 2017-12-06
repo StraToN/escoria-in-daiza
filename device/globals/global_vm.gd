@@ -87,9 +87,11 @@ func settings_loaded(p_settings):
 	AudioServer.set_bus_volume_db(0, settings.sfx_volume)
 	TranslationServer.set_locale(settings.text_lang)
 	music_volume_changed()
-	update_window_fullscreen(true)
+	# use 2D and keep ratio in project settings instead of custom code
+	#update_window_fullscreen(true)
 	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "ui", "language_changed")
 
+#unused, see line 90
 func update_window_fullscreen(p_force = false):
 	if ProjectSettings.get("debug/screen_size_override"):
 		return

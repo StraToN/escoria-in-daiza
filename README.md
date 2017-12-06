@@ -26,6 +26,7 @@ Credits
   - [Adrien "Kooda" Ramos](http://upyum.com)
 
 Contributions to translation : Ranito and Chaosprower
+Contributions to code porting to Godot 3 : StraTon, fleskevor
 
 
 Licenses

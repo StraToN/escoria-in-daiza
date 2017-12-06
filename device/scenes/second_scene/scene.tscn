@@ -237,7 +237,7 @@ placeholders = {
 [node name="player" parent="." instance=ExtResource( 16 )]
 
 position = Vector2( 1470.65, 826.26 )
-scale = Vector2( 0.43467, 0.43467 )
+scale = Vector2( 0.434671, 0.434671 )
 z = 826
 speed = 1000
 placeholders = {

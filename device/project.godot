@@ -12,6 +12,7 @@ config_version=3
 
 config/name="Escoria in Daiza"
 run/main_scene="res://globals/scene_main.tscn"
+config/icon="res://icon.png"
 max_voice_volume=2
 save_data="res://globals/save_data.gd"
 speech_suffix=".ogg"
@@ -30,14 +31,17 @@ screen_size_override=false
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1920
+window/size/height=1080
+window/handheld/emulate_touchscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 game_height=1080
 game_width=1920
-window/height=720
-window/test_height=720
-window/test_width=1280
-window/width=1280
+window/height=1080
+window/test_height=1080
+window/test_width=1920
+window/width=1920
 
 [gdnative]
 

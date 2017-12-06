@@ -42,6 +42,8 @@ func is_ready():
 	return true
 
 func start():
-	if ProjectSettings.has_singleton("GameCenter"):
-		GameCenter = ProjectSettings.get_singleton("GameCenter")
-		iOS = ProjectSettings.get_singleton("iOS")
+	# has_singleton() seem to be not implemented in Godot 3 beta, unuse for now
+	#if ProjectSettings.has_singleton("GameCenter"):
+	#	GameCenter = ProjectSettings.get_singleton("GameCenter")
+	#	iOS = ProjectSettings.get_singleton("iOS")
+	pass
