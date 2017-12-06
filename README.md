@@ -9,7 +9,7 @@ Since then, the project goes on its own path and is developped by the same team.
 
 Download
 -------
-We are currently moving code to Godot 3
+We are currently moving code to Godot 3 !   
 But you still can [download the Godot 2.1.4 stable branch](https://github.com/flossmanualsfr/escoria/archive/2.1.4.zip) 
 
 
