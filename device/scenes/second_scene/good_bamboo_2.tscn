@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/second_scene/sprites/click_mask/good-bamboo-2_click_mask.pbm" type="BitMap" id=2]
-[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="AudioStream" id=3]
-[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-2.png" type="Texture" id=4]
+[ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="AudioStream" id=2]
+[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-2.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -15,6 +14,7 @@ tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -22,8 +22,15 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="good_bamboo_2" type="Node2D"]
+[node name="good_bamboo_2" type="Area2D"]
 
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z" ]
 animations = null
@@ -45,31 +52,14 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="area" type="TextureButton" parent="."]
+[node name="shape" type="CollisionPolygon2D" parent="."]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -119.0
-margin_top = -384.0
-margin_right = 41.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_click_mask = ExtResource( 2 )
-_sections_unfolded = [ "Margin", "Textures" ]
+build_mode = 0
+polygon = PoolVector2Array( -38.5, -142.802, -75, -176.302, -112.5, -318.802, -82.5, -379.802, -41.5, -374.302, -42, -308.302, -22, -309.302, 11.5, -222.302, -13, -151.802, 33, 19.1982, 5.50003, 31.6982 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 volume_db = 0.0
 autoplay = false
 max_distance = 2000.0
@@ -82,6 +72,10 @@ area_mask = 1
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
+autoplay = ""
+speed_scale = 1.0
+active = true
+current_animation = ""
 anims/pick_up = SubResource( 1 )
 playback/active = true
 playback/speed = 1.0
@@ -91,7 +85,7 @@ autoplay = ""
 [node name="_focus_out" type="Sprite" parent="."]
 
 position = Vector2( -39.0811, -179.29 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="_focus_in" type="Sprite" parent="."]

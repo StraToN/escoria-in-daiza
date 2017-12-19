@@ -2,7 +2,7 @@
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sprites/decor-background.jpg" type="Texture" id=2]
-[ext_resource path="res://globals/background.gd" type="Script" id=3]
+[ext_resource path="res://globals/background_area.gd" type="Script" id=3]
 [ext_resource path="res://scenes/intro-game/bad_bamboo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/intro-game/good_bamboo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/intro-game/old_man.tscn" type="PackedScene" id=6]
@@ -25,22 +25,28 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
+
+[node name="background_areaa" type="Area2D" parent="."]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 action = "walk"
 
 [node name="bad_bamboo" parent="." instance=ExtResource( 4 )]
 
 position = Vector2( 1121.21, 884.903 )
 z = 884
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
 placeholders = {
 
 }
@@ -58,7 +64,6 @@ placeholders = {
 
 position = Vector2( 383.883, 617.274 )
 scale = Vector2( 0.7, 0.7 )
-_sections_unfolded = [ "Transform" ]
 placeholders = {
 
 }

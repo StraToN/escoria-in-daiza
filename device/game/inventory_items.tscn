@@ -1,24 +1,27 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro-game/sprites/bad-bamboo.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/click_mask/bad_bamboo_click_mask.pbm" type="BitMap" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/good-bamboo.png" type="Texture" id=4]
-[ext_resource path="res://scenes/intro-game/sprites/click_mask/good_bamboo_click_mask.pbm" type="BitMap" id=5]
-[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-2.png" type="Texture" id=6]
-[ext_resource path="res://scenes/second_scene/sprites/click_mask/good-bamboo-2_click_mask.pbm" type="BitMap" id=7]
-[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-3.png" type="Texture" id=8]
-[ext_resource path="res://scenes/second_scene/sprites/click_mask/good-bamboo-3_click_mask.pbm" type="BitMap" id=9]
+[ext_resource path="res://scenes/intro-game/sprites/good-bamboo.png" type="Texture" id=3]
+[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-2.png" type="Texture" id=4]
+[ext_resource path="res://scenes/second_scene/sprites/good-bamboo-3.png" type="Texture" id=5]
 
 [node name="items" type="Node2D"]
 
 position = Vector2( 276.824, -161.993 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="inv_bad_bamboo_origin" type="Node2D" parent="."]
+[node name="inv_bad_bamboo_origin" type="Area2D" parent="."]
 
 position = Vector2( -274.921, 159.045 )
 z = 159
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 animations = null
@@ -61,13 +64,24 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
-texture_click_mask = ExtResource( 3 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
-[node name="inv_bad_bamboo_origin1" type="Node2D" parent="."]
+[node name="shape" type="CollisionPolygon2D" parent="inv_bad_bamboo_origin"]
+
+build_mode = 0
+polygon = PoolVector2Array( -98.503, -39.452, -202.503, -41.452, -222.503, 17.548, -195.503, 63.548, -104.503, 64.548, -67.503, 155.548, 8.49701, 142.548, 65.497, 68.548, 301.497, 86.548, 306.497, 45.548, 148.497, 19.548, 94.497, -83.452, 28.497, -80.452, 38.497, -6.452, -49.503, -13.452 )
+
+[node name="inv_bad_bamboo_origin1" type="Area2D" parent="."]
 
 position = Vector2( -274.921, 159.045 )
 z = 159
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z" ]
 animations = null
@@ -110,13 +124,24 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
-texture_click_mask = ExtResource( 3 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
-[node name="inv_good_bamboo_origin" type="Node2D" parent="."]
+[node name="shape" type="CollisionPolygon2D" parent="inv_bad_bamboo_origin1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 75.497, 71.548, -6.50299, 151.548, -89.503, 134.548, -96.503, 66.548, -171.503, 70.548, -226.503, 43.548, -215.503, -47.452, -77.503, -54.452, -56.503, -17.452, 45.497, 9.548, 7.49701, -68.452, 57.497, -97.452, 107.497, -57.452, 155.497, 19.548, 310.497, 46.548, 305.497, 81.548 )
+
+[node name="inv_good_bamboo_origin" type="Area2D" parent="."]
 
 position = Vector2( -274.921, 161.317 )
 z = 161
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z" ]
 animations = null
@@ -158,14 +183,25 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-texture_click_mask = ExtResource( 5 )
+texture_normal = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures" ]
 
-[node name="inv_good_bamboo_origin1" type="Node2D" parent="."]
+[node name="shape" type="CollisionPolygon2D" parent="inv_good_bamboo_origin"]
+
+build_mode = 0
+polygon = PoolVector2Array( 66.497, 13.276, -209.503, -24.724, -209.503, 5.276, 57.497, 42.276, 79.497, 78.276, 184.497, 95.276, 290.497, 203.276, 348.497, 152.276, 335.497, 10.276, 265.497, -29.724, 145.697, -26.724 )
+
+[node name="inv_good_bamboo_origin1" type="Area2D" parent="."]
 
 position = Vector2( -274.921, 161.317 )
 z = 161
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z" ]
 animations = null
@@ -207,14 +243,25 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
+texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
-[node name="inv_good_bamboo_origin2" type="Node2D" parent="."]
+[node name="shape" type="CollisionPolygon2D" parent="inv_good_bamboo_origin1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -145.203, 7.226, 48.297, 42.726, 63.297, 77.226, 124.797, 101.226, 254.297, 114.226, 271.297, 79.226, 220.297, 19.726, 65.797, -5.274, 39.797, 18.726, -135.703, -20.274 )
+
+[node name="inv_good_bamboo_origin2" type="Area2D" parent="."]
 
 position = Vector2( -274.921, 161.317 )
 z = 161
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z" ]
 animations = null
@@ -257,8 +304,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_click_mask = ExtResource( 9 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
+
+[node name="shape" type="CollisionPolygon2D" parent="inv_good_bamboo_origin2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -158.203, -18.774, -174.203, 18.226, 98.797, 57.726, 101.797, 93.726, 190.297, 144.726, 294.297, 47.226, 223.797, -40.274, 124.797, -10.774, 53.297, -30.274, 32.297, 8.226 )
 
 

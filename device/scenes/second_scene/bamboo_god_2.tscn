@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/click_mask/spirit_click_mask.pbm" type="BitMap" id=2]
-[ext_resource path="res://scenes/second_scene/sprites/spirit-angry.png" type="Texture" id=3]
-[ext_resource path="res://scenes/second_scene/sprites/spirit-happy.png" type="Texture" id=4]
-[ext_resource path="res://scenes/second_scene/sprites/spirit-neutral.png" type="Texture" id=5]
+[ext_resource path="res://scenes/second_scene/sprites/spirit-angry.png" type="Texture" id=2]
+[ext_resource path="res://scenes/second_scene/sprites/spirit-happy.png" type="Texture" id=3]
+[ext_resource path="res://scenes/second_scene/sprites/spirit-neutral.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -16,6 +15,7 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -33,6 +33,7 @@ tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -50,6 +51,7 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -67,6 +69,7 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -77,14 +80,21 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="bamboo_god_2" type="Node2D"]
+[node name="bamboo_god_2" type="Area2D"]
 
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 animations = null
 speed = 300
@@ -105,33 +115,20 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="area" type="TextureButton" parent="."]
+[node name="shape" type="CollisionPolygon2D" parent="."]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -512.0
-margin_top = -559.0
-margin_right = 490.0
-margin_bottom = 293.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_click_mask = ExtResource( 2 )
-_sections_unfolded = [ "Margin", "Rect", "Textures", "Visibility" ]
+build_mode = 0
+polygon = PoolVector2Array( -151.5, -82.8018, -203, -44.3018, -197.5, 19.1982, -146.5, 33.6982, -67, 31.1982, -43, 64.1982, 45, 57.6982, 65, 14.1982, 161.5, 7.69821, 190.5, -24.8018, 174.5, -67.3018, 103, -91.3018, 108, -130.302, 147.5, -131.802, 286.5, -259.802, 273.5, -303.302, 221.5, -311.802, 202.5, -278.302, 200.5, -249.802, 141, -221.802, 112.5, -239.802, 102, -349.802, 117, -398.302, 93, -415.302, -134, -423.802, -158, -394.302, -146, -355.802, -164.5, -286.802, -143.5, -236.802, -208.5, -223.802, -258.5, -252.802, -255.5, -285.802, -299, -307.802, -331.5, -291.302, -330, -243.802, -205, -136.802, -156.5, -128.802 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
+autoplay = "neutral"
+speed_scale = 1.0
+active = true
+current_animation = ""
 anims/angry = SubResource( 1 )
 anims/god_appears = SubResource( 2 )
 anims/happy = SubResource( 3 )
