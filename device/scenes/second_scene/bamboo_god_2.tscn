@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/second_scene/sprites/click_mask/spirit-neutral_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/intro-game/sprites/click_mask/spirit_click_mask.pbm" type="BitMap" id=2]
 [ext_resource path="res://scenes/second_scene/sprites/spirit-angry.png" type="Texture" id=3]
 [ext_resource path="res://scenes/second_scene/sprites/spirit-happy.png" type="Texture" id=4]
 [ext_resource path="res://scenes/second_scene/sprites/spirit-neutral.png" type="Texture" id=5]
