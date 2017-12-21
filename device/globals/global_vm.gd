@@ -444,6 +444,8 @@ func change_scene(params, context):
 	res_cache.clear()
 	var scene = res.instance()
 	if scene:
+		# Workaround for instanced scene not having a filename
+		scene.set_filename(params[0])
 		main.set_scene(scene)
 	else:
 		report_errors("", ["Failed loading scene "+params[0]+" for change_scene"])
@@ -494,7 +496,8 @@ func is_game_active():
 func check_autosave():
 	if get_global("save_disabled"):
 		return
-	if main.get_current_scene() == null || !(main.get_current_scene() is preload("res://globals/scene.gd")):
+	if main.get_current_scene() == null || !main.get_current_scene().get_filename() \
+		|| !(main.get_current_scene() is preload("res://globals/scene.gd")):
 		return
 	var time = OS.get_ticks_msec()
 	if autosave_pending || (time - last_autosave) > AUTOSAVE_TIME_MS:
