@@ -33,15 +33,21 @@ screen_size_override=false
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=1280
+window/size/test_height=1024
 window/handheld/emulate_touchscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 game_height=1080
 game_width=1920
 window/height=1080
-window/test_height=1080
-window/test_width=1920
+window/test_height=1024
+window/test_width=1280
 window/width=1920
+
+[editor_plugins]
+
+enabled=PoolStringArray( "godot-inheritance-dock" )
 
 [gdnative]
 

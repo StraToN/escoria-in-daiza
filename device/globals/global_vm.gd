@@ -87,11 +87,9 @@ func settings_loaded(p_settings):
 	AudioServer.set_bus_volume_db(0, settings.sfx_volume)
 	TranslationServer.set_locale(settings.text_lang)
 	music_volume_changed()
-	# use 2D and keep ratio in project settings instead of custom code
-	#update_window_fullscreen(true)
+	update_window_fullscreen(true)
 	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "ui", "language_changed")
 
-#unused, see line 90
 func update_window_fullscreen(p_force = false):
 	if ProjectSettings.get("debug/screen_size_override"):
 		return
@@ -444,8 +442,6 @@ func change_scene(params, context):
 	res_cache.clear()
 	var scene = res.instance()
 	if scene:
-		# Workaround for instanced scene not having a filename
-		scene.set_filename(params[0])
 		main.set_scene(scene)
 	else:
 		report_errors("", ["Failed loading scene "+params[0]+" for change_scene"])
@@ -496,8 +492,7 @@ func is_game_active():
 func check_autosave():
 	if get_global("save_disabled"):
 		return
-	if main.get_current_scene() == null || !main.get_current_scene().get_filename() \
-		|| !(main.get_current_scene() is preload("res://globals/scene.gd")):
+	if main.get_current_scene() == null || !(main.get_current_scene() is preload("res://globals/scene.gd")):
 		return
 	var time = OS.get_ticks_msec()
 	if autosave_pending || (time - last_autosave) > AUTOSAVE_TIME_MS:
@@ -662,8 +657,7 @@ func focus_out():
 func focus_in():
 	#AudioServer.set_stream_global_volume_scale(1)
 	AudioServer.set_bus_volume_db(0, 1)
-	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)		
-
+	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)
 	#if !focus_pause:
 	#	set_pause(false)
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://globals/bg_music.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sounds/asianoriental2.ogg" type="AudioStream" id=2]
 
 [node name="bg_music" type="Control"]
 
@@ -38,9 +37,9 @@ use_custom_z = false
 
 [node name="stream" type="AudioStreamPlayer" parent="."]
 
-stream = ExtResource( 2 )
+stream = null
 volume_db = 0.0
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 

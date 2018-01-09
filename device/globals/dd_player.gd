@@ -11,6 +11,7 @@ func start(params, level):
 
 	printt("******* instancing dialog ", type)
 
+	print(get_resource_list())
 	var inst = get_resource(type).instance()
 	get_parent().add_child(inst)
 

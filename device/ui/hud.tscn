@@ -15,14 +15,13 @@ anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="tooltip" type="Label" parent="."]
+[node name="tooltip" type="Label" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -33,7 +32,6 @@ margin_top = 58.0
 margin_right = 1149.0
 margin_bottom = 115.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
@@ -46,16 +44,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Mouse", "Rect", "custom_fonts" ]
 
-[node name="inventory" parent="." instance=ExtResource( 3 )]
+[node name="inventory" parent="." index="1" instance=ExtResource( 3 )]
 
 margin_left = 1287.0
 margin_top = 746.0
 margin_right = 1327.0
 margin_bottom = 786.0
 script = ExtResource( 4 )
-_sections_unfolded = [ "Margin", "Rect" ]
+_sections_unfolded = [ "Margin", "Rect", "Visibility" ]
 
-[node name="verb_menu" parent="." instance=ExtResource( 5 )]
+[node name="verb_menu" parent="." index="2" instance=ExtResource( 5 )]
 
 margin_left = 494.0
 margin_top = 855.0

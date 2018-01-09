@@ -221,8 +221,11 @@ func _check_bounds():
 		get_node("terrain_icon").show()
 
 func _update_terrain():
+	if terrain == null:
+		# do nothing
+		return
 	var pos = get_position()
-	set_z(pos.y)
+	set_z_index(pos.y)
 	var color = terrain.get_terrain(pos)
 	var scal = terrain.get_scale_range(color.b)
 	scal.x = scal.x * pose_scale
